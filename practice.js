@@ -1,6 +1,5 @@
 // this is my first comment to practice pushing changes to github
 // adding another comment to practice pushing
-// comment 6
 // comment 7
 // comment 8
 // comment 9
@@ -9,3 +8,4 @@
 // comment 12
 // comment 13
 // comment 14
+// comment 15
