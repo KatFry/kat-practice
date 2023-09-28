@@ -1,5 +1,4 @@
 // this is my first comment to practice pushing changes to github
-// adding another comment to practice pushing
 // c88
 // c89
 // c90
@@ -7,6 +6,7 @@
 // c92
 // c93
 // c94
+// c95
 
 //addTwo function
 function addTwo(num) {
