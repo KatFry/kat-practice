@@ -7,3 +7,11 @@
 // c91
 // c92
 // c93
+
+function addTwo(num) {
+  return num + 2;
+}
+
+function addS(str) {
+  return str + 's';
+}
