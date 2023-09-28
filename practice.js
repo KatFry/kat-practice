@@ -18,3 +18,10 @@ function addS(str) {
   return str + 's';
 }
 
+function addSToStrings(array) {
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] + 's');
+  }
+  return newArray;
+}
