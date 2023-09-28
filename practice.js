@@ -8,10 +8,13 @@
 // c92
 // c93
 
+//addTwo function
 function addTwo(num) {
   return num + 2;
 }
 
+//addS function
 function addS(str) {
   return str + 's';
 }
+
