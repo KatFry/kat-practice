@@ -29,3 +29,4 @@ function addSToStrings(array) {
 }
 
 // add more functions here 
+const multiplyByTwo = num => num * 2;
