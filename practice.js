@@ -33,3 +33,6 @@ const multiplyByTwo = num => num * 2;
 
 // function is Even
 const isEven = num => num % 2 === 0; 
+
+// function isOdd
+const isOdd = num => num % 2 !== 0; 
