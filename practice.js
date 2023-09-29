@@ -30,3 +30,6 @@ function addSToStrings(array) {
 
 // add more functions here 
 const multiplyByTwo = num => num * 2;
+
+// function is Even
+const isEven = num => num % 2 === 0; 
