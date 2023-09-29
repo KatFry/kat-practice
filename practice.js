@@ -18,6 +18,8 @@ function addS(str) {
   return str + 's';
 }
 
+// input: array
+// output: new array of each string with 's' added to end 
 function addSToStrings(array) {
   const newArray = [];
   for (let i = 0; i < array.length; i++) {
