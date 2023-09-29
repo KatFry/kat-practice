@@ -32,6 +32,7 @@ function addSToStrings(array) {
 const multiplyByTwo = num => num * 2;
 
 // function is Even
+// input number, output boolean
 const isEven = num => num % 2 === 0; 
 
 // function isOdd
