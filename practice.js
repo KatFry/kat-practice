@@ -25,3 +25,5 @@ function addSToStrings(array) {
   }
   return newArray;
 }
+
+// add more functions here 
