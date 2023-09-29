@@ -36,4 +36,5 @@ const multiplyByTwo = num => num * 2;
 const isEven = num => num % 2 === 0; 
 
 // function isOdd
+// input number, output boolean
 const isOdd = num => num % 2 !== 0; 
