@@ -101,4 +101,13 @@ and returns an array filled with the appropriate numbers of elements.
 The order of the elements in the array does not matter, 
 but repeated elements should be grouped.
 */
-
+const arrayBuilder = obj => {
+  const elements = [];
+  for (const key in obj) {
+    let repeatCount = obj[key];
+    while (repeatCount > 0) {
+      elements.push(key);
+      repeatCount--;
+    }
+  }
+}
