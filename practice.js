@@ -76,3 +76,12 @@ const objOfMatches = (arr1, arr2, cb) => {
   }
   return obj;
 }
+
+/*
+Create a function goodKeys that accepts an object and a callback. 
+The callback will return either true or false. 
+goodKeys will iterate through the object and perform the callback on each value. 
+goodKeys will then return an array consisting only the keys whose associated values 
+yielded a true return value from the callback.
+*/
+
