@@ -110,4 +110,5 @@ const arrayBuilder = obj => {
       repeatCount--;
     }
   }
+  return elements;
 }
