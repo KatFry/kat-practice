@@ -38,3 +38,6 @@ const isEven = num => num % 2 === 0;
 // function isOdd
 // input number, output boolean
 const isOdd = num => num % 2 !== 0; 
+
+// function lastLetter
+const lastLetter = str => str[str.length - 1];
