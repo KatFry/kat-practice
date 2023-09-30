@@ -85,6 +85,8 @@ goodKeys will then return an array consisting only the keys whose associated val
 yielded a true return value from the callback.
 */
 
+// input: obj, callback
+// output: boolean 
 const goodKeys = (obj, cb) => {
   const result = [];
   for (const key of obj) {
