@@ -41,3 +41,14 @@ const isOdd = num => num % 2 !== 0;
 
 // function lastLetter
 const lastLetter = str => str[str.length - 1];
+
+// function disemvowel
+const disemvowel = str => {
+  const vowels = {
+    a: true,
+    e: true,
+    i: true,
+    o: true,
+    u: true,
+  };
+}
