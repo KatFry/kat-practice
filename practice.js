@@ -51,4 +51,10 @@ const disemvowel = str => {
     o: true,
     u: true,
   };
+  const result = '';
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i].toLowerCase();
+    if (!vowels[letter]) result += str[i];
+  }
+  return result;
 }
