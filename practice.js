@@ -136,3 +136,25 @@ const consecutive = arr => {
 }
 
 // function reverseLinkedList
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
+
+const reverseLinkedList = (head) => {
+  // create the pointers 
+  let curr = head;
+  let prev = null;
+  let next = null;
+  // while curr is not null
+  while (curr !== null) {
+    // reassign next to curr.next
+    next = curr.next;
+    // reassign curr.next to prev (to point in other direction)
+    curr.next = prev;
+    // reassign prev to curr
+    prev = curr;
+    // reassign curr to next
+    curr = next;
+  }
+}
