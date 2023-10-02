@@ -126,3 +126,11 @@ const noDuplicates = arr => {
 }
 
 // function consecutive
+const consecutive = arr => {
+  const sorted = arr.sort((a, b) => a - b);
+  let length = 0;
+  for (let i = 0; i < sorted.length; i++) {
+    if (arr[i + 1] === arr[i] + 1) length++;
+  }
+  return length;
+}
