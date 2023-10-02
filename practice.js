@@ -124,3 +124,5 @@ const noDuplicates = arr => {
   }
   return result;
 }
+
+// function consecutive
