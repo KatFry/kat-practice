@@ -114,3 +114,13 @@ const arrayBuilder = obj => {
 }
 
 // more functions here 
+
+// function noDuplicates
+const noDuplicates = arr => {
+  const result = [];
+  const set = new Set(arr);
+  for (const key of set) {
+    result.push(set[key]);
+  }
+  return result;
+}
