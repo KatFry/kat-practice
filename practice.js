@@ -134,3 +134,5 @@ const consecutive = arr => {
   }
   return length;
 }
+
+// function reverseLinkedList
