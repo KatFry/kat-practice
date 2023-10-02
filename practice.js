@@ -112,3 +112,5 @@ const arrayBuilder = obj => {
   }
   return elements;
 }
+
+// more functions here 
