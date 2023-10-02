@@ -161,5 +161,5 @@ const reverseLinkedList = (head) => {
 
 // function sumArray
 const sumArray = arr => {
-  
+  return arr.reduce((acc, curr) => acc + curr); 
 }
