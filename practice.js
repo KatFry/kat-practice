@@ -158,3 +158,8 @@ const reverseLinkedList = (head) => {
     curr = next;
   }
 }
+
+// function sumArray
+const sumArray = arr => {
+  
+}
