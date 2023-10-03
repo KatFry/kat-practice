@@ -177,3 +177,7 @@ class Person {
 Person.prototype.introduce = () => {
   return `hello, my name is ${this.name}`;
 }
+
+Person.prototype.greet = () => {
+  return `hello, I am ${this.name} and I am ${this.age} years old`;
+}
