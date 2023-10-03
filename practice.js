@@ -181,3 +181,10 @@ Person.prototype.introduce = () => {
 Person.prototype.greet = () => {
   return `hello, I am ${this.name} and I am ${this.age} years old`;
 }
+
+class Developer extends Person {
+  constructor (city, pet) {
+    this.city = city;
+    this.pet = pet;
+  }
+}
