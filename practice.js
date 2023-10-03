@@ -182,6 +182,7 @@ Person.prototype.greet = () => {
   return `hello, I am ${this.name} and I am ${this.age} years old`;
 }
 
+// developer class extends person 
 class Developer extends Person {
   constructor (city, pet) {
     this.city = city;
