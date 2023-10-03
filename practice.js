@@ -165,3 +165,11 @@ const sumArray = arr => {
 }
 
 // more functions below 
+
+// function makePerson
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
