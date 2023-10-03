@@ -173,3 +173,7 @@ class Person {
     this.age = age;
   }
 }
+
+Person.prototype.introduce = () => {
+  return `hello, my name is ${this.name}`;
+}
