@@ -174,6 +174,7 @@ class Person {
   }
 }
 
+// add methods to the Person prototype
 Person.prototype.introduce = () => {
   return `hello, my name is ${this.name}`;
 }
