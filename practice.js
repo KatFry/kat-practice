@@ -186,7 +186,9 @@ Person.prototype.greet = () => {
 // developer class extends person 
 class Developer extends Person {
   constructor (city, pet) {
+    // assign city 
     this.city = city;
+    // assign pet 
     this.pet = pet;
   }
 }
