@@ -52,7 +52,21 @@ const groupAnagrams = strs => {
 }
 
 // OPTION 2: using a Map constructor 
-
+// const groupAnagrams = strs => {
+//   // declare a const called anagramsMap assigned to a new Map
+//   const anagramsMap = new Map();
+//   // iterate over each str in the array (would also include check here to make sure all are strings)
+//   for (const str of strs) {
+//     // convert str to array, sort, and rejoin 
+//     const sortedStr = str.split('').sort().join('');
+//     // use sortedStr as a key in the map (if sortedStr doesn't exist, set it as key, value as empty array)
+//     if (!anagramsMap.has(sortedStr)) anagramsMap.set(sortedStr, []);
+//     // push original string to corresponding group in map
+//     anagramsMap.get(sortedStr).push(str);
+//   }
+//   // convert map values to array to get final result
+//   return Array.from(anagramsMap.values());
+// }
 
 console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])); // returns [["bat"],["nat","tan"],["ate","eat","tea"]]
 console.log(groupAnagrams([""])); // returns [[""]]
