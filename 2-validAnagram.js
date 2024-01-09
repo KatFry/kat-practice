@@ -54,9 +54,39 @@ s and t consist of lowercase English letters.
 
 // OPTION 2: without using sets 
 const validAnagram = (s, t) => {
+  // if s or t are not strings
+  if (typeof s !== "string" || typeof t !== "string") {
+    // log 'both input values must be strings'
+    console.log('both input values must be strings');
+    // return false
+    return false;
+  }
+  // if the string lengths are not the same, immediately return false
+  if (s.length !== t.length) return false;
+  // create an object to store character count of s
+  const charCount = {};
+
+  // increment count for each character of s 
+  for (const char of s) {
+    // assign key of the char to either its count (if it exists) or 0, plus 1 
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  // decrement count for each character in t
+  for (const char of t) {
+    // if it doesn't exist or its count becomes negative, return false 
+    // this would mean t has char not present in s or has higher frequency than s 
+    if (!charCount[char]) return false;
+    // decrement the value of charCount (if they all end at 0, frequency is same as s)
+    charCount[char]--;
+  }
   
+  // if all chars have matching counts,  return true
+  return true;
 }
 
+
+// TESTS:
 console.log(validAnagram('rat', 'tar'));
 console.log(validAnagram('rat',  'car'));
 console.log(validAnagram('art', 'star'))
