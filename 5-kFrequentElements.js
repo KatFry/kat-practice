@@ -28,21 +28,36 @@ const kFrequentElements = (nums, k) => {
   const freqs = {};
   // loop over the nums array, storing how many times each num appears
   for (const num of nums) {
-
+    // if the key doesn't exist, add it 
+    if (freqs[num] === undefined) freqs[num] = 1;
+    // else add 1 
+    else freqs[num]++;
   }
+
+  // convert to an array 
+  const freqArray = [];
+  for (const key in freqs) {
+    freqArray.push([freqs[key], key]);
+  }
+
+  // sort in descending order
+  freqArray.sort((a, b) => b[0] - a[0]);
+
+  // get mostFreq and return 
+  const mostFreq = []; 
+  for (let i = 0; i < k; i++) {
+    mostFreq.push(freqArray[i][1]);
+  }
+  return mostFreq;
 }
 
+console.log(kFrequentElements([1,1,1,2,2,3], 2)); // should return [1, 2]
+console.log(kFrequentElements([1], 1)); // should return [1]
 
-// const kFrequentElements = (nums, k) => {
-//   // declare a const assigned to a new instance of a Map 
-//   const frequencyMap = new Map(); 
-//   // loop over the passed-in nums array 
-//   for (const num of nums) {
-//     // declare a count variable to keep track of how frequent each num is in the array 
-//     // assign it to either using the get method to find corresponding num, or set to 0 if it doesn't exist yet 
-//     let count = frequencyMap.get(num) || 0; 
-//   }
-//     // 
 
-//   // return the arrayFrequency 
-// }
+// OPTION 2: using a Map and sorting 
+
+const kFrequentElements2 = (nums, k) => {
+
+}
+
