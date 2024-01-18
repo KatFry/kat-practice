@@ -57,14 +57,28 @@ const kFrequentElements = (nums, k) => {
   return mostFreq;
 }
 
-console.log(kFrequentElements([1,1,1,2,2,3], 2)); // should return [1, 2]
-console.log(kFrequentElements([1], 1)); // should return [1]
+// TESTS:
+// console.log(kFrequentElements([1,1,1,2,2,3], 2)); // should return [1, 2]
+// console.log(kFrequentElements([1], 1)); // should return [1]
 
 
 // OPTION 2: using reduce and sort 
 const kFrequentElements2 = (nums, k) => {
-  // declare a const assigned to a new instance of a Map constructor
-  const freqMap = new Map();
+  const freqs = nums.reduce((acc, num) => {
+    acc[num] = (acc[num] || 0) + 1;
+    return acc;
+  }, {});
 
+  // declare freqArray to Object entries of the freqs object
+  const freqArray = Object.entries(freqs);
+  // sort the array 
+  freqArray.sort((a, b) => b[1] - a[1]);
+  // extract only first element as a number from the pair 
+  const mostFreq = freqArray.slice(0, k).map(pair => Number(pair[0]));
+  return mostFreq;
 }
+
+// TESTS:
+// console.log(kFrequentElements2([1,1,1,2,2,3], 2)); // should return [1, 2]
+// console.log(kFrequentElements2([1], 1)); // should return [1]
 
