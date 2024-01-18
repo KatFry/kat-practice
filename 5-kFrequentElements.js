@@ -61,6 +61,6 @@ console.log(kFrequentElements([1], 1)); // should return [1]
 const kFrequentElements2 = (nums, k) => {
   // declare a const assigned to a new instance of a Map constructor
   const freqMap = new Map();
-
+  
 }
 
