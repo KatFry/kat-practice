@@ -45,11 +45,15 @@ const kFrequentElements = (nums, k) => {
   console.log(freqArray);
 
   // get mostFreq and return 
-  const mostFreq = []; 
-  for (let i = 0; i < k; i++) {
-    // the below line is accessing the 2nd el of each pair, the actual number that appeared in original array 
-    mostFreq.push(freqArray[i][1]);
-  }
+  // const mostFreq = []; 
+  // for (let i = 0; i < k; i++) {
+  //   // the below line is accessing the 2nd el of each pair, the actual number that appeared in original array 
+  //   mostFreq.push(freqArray[i][1]);
+  // }
+
+  // the above method doesn't convert the string back to a number, so to solve: 
+  // instead assign mostFreq to slicing freqArray, and converting to a number (since all object keys are strings)
+  const mostFreq = freqArray.slice(0, k).map(pair => Number(pair[1]));
   return mostFreq;
 }
 
@@ -57,10 +61,10 @@ console.log(kFrequentElements([1,1,1,2,2,3], 2)); // should return [1, 2]
 console.log(kFrequentElements([1], 1)); // should return [1]
 
 
-// OPTION 2: using a Map and sorting 
+// OPTION 2: using reduce and sort 
 const kFrequentElements2 = (nums, k) => {
   // declare a const assigned to a new instance of a Map constructor
   const freqMap = new Map();
-  
+
 }
 
