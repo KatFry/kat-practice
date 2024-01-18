@@ -31,7 +31,7 @@ const kFrequentElements = (nums, k) => {
     // if the key doesn't exist, add it 
     if (freqs[num] === undefined) freqs[num] = 1;
     // else add 1 
-    else freqs[num]++;
+    else freqs[num] + 1;
   }
 
   // convert to an array 
@@ -42,10 +42,12 @@ const kFrequentElements = (nums, k) => {
 
   // sort in descending order
   freqArray.sort((a, b) => b[0] - a[0]);
+  console.log(freqArray);
 
   // get mostFreq and return 
   const mostFreq = []; 
   for (let i = 0; i < k; i++) {
+    // the below line is accessing the 2nd el of each pair, the actual number that appeared in original array 
     mostFreq.push(freqArray[i][1]);
   }
   return mostFreq;
@@ -56,8 +58,9 @@ console.log(kFrequentElements([1], 1)); // should return [1]
 
 
 // OPTION 2: using a Map and sorting 
-
 const kFrequentElements2 = (nums, k) => {
+  // declare a const assigned to a new instance of a Map constructor
+  const freqMap = new Map();
 
 }
 
