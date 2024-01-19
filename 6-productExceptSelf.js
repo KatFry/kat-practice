@@ -41,9 +41,7 @@ const productExceptSelf = nums => {
   const n = nums.length;
   // initialize prefix and suffix arrays (every element will start off as 1)
   const preProducts = Array(n).fill(1);
-  // console.log('preProducts: ', preProducts);
   const sufProducts = Array(n).fill(1);
-  // console.log('sufProducts: ', sufProducts);
 
   // calculate prefix products 
   let preProd = 1;
@@ -53,7 +51,6 @@ const productExceptSelf = nums => {
     preProducts[i] = preProd;
     // multiply preProd by nums at i
     preProd *= nums[i];
-    // console.log(preProd);
   }
 
   // calculate suffix products
@@ -64,7 +61,6 @@ const productExceptSelf = nums => {
     sufProducts[i] = sufProd;
     // multiply sufProduct by nums at i
     sufProd *= nums[i]; 
-    // console.log(sufProd);
   }
 
   // calculate result array 
@@ -120,5 +116,5 @@ const productExceptSelf2 = nums => {
 }
 
 // TESTS:
-console.log(productExceptSelf2([1, 2, 3, 4])); // should return [24, 12, 8, 6]
-console.log(productExceptSelf2([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
+// console.log(productExceptSelf2([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+// console.log(productExceptSelf2([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
