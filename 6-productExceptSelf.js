@@ -48,7 +48,7 @@ const productExceptSelf = nums => {
     preProducts[i] = preProd;
     // multiply preProd by nums at i
     preProd *= nums[i];
-    console.log(preProd);
+    // console.log(preProd);
   }
 
   // calculate suffix products
@@ -59,7 +59,7 @@ const productExceptSelf = nums => {
     sufProducts[i] = sufProd;
     // multiply sufProduct by nums at i
     sufProd *= nums[i]; 
-    console.log(sufProd);
+    // console.log(sufProd);
   }
 
   // calculate result array 
@@ -74,5 +74,5 @@ const productExceptSelf = nums => {
 }
 
 console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
 
-// Look at this one more tomorrow for better understanding! 
