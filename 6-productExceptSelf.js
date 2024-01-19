@@ -70,8 +70,8 @@ const productExceptSelf = nums => {
   // calculate result array 
   const result = [];
   for (let i = 0; i < n; i ++) {
-    // assign result at i to preProducts[i] * sufProducts[i]
-    result[i] = preProducts[i] * sufProducts[i];
+    // assign result at i to preProducts[i] * sufProducts[i]; and fix the -0 problem 
+    result[i] = preProducts[i] * sufProducts[i] === 0 ? 0 : preProducts[i] * sufProducts[i];
   }
 
   // return the result
@@ -79,8 +79,10 @@ const productExceptSelf = nums => {
 }
 
 // TESTS:
-// console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
-// console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
+console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
 
 
-// OPTION 2: with O(1) space complexity 
+// OPTION 2: with O(1) space complexity
+
+
