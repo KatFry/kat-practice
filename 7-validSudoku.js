@@ -56,7 +56,7 @@ board[i][j] is a digit 1-9 or '.'.
 // input: array of arrays 
 // output: boolean value 
 const validSudoku = board => {
-
+  // adding comments here 
 }
 
 
