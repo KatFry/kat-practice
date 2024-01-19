@@ -31,6 +31,11 @@ Follow up: Can you solve the problem in O(1) extra space complexity?
 
 // input: integer array nums
 // output: array such that answer[i] equals product of all els except nums[i] 
+
+// OPTION 1: 
+// time and space complexity of this solution is O(n) because of the three arrays 
+  // time: each iteration involves single pass through the array 
+  // space: each array has size proportional to input array nums (so linear with respect to input)
 const productExceptSelf = nums => {
   // declare a constant n assigned to nums.length (to be easier to keep track of)
   const n = nums.length;
@@ -73,6 +78,9 @@ const productExceptSelf = nums => {
   return result;
 }
 
-console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
-console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
+// TESTS:
+// console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+// console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
 
+
+// OPTION 2: with O(1) space complexity 
