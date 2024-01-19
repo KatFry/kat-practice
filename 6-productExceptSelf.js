@@ -79,10 +79,40 @@ const productExceptSelf = nums => {
 }
 
 // TESTS:
-console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
-console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0], figure out why this gives -0
+// console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+// console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
 
 
 // OPTION 2: with O(1) space complexity
+  // to do this - use the result array to store prefix and suffix products instead of 2 separate arrays 
+const productExceptSelf2 = nums => {
+  // assign constant n to the length of the nums array 
+  
+  // declare a constant result assigned to filling the array with 1's 
+
+  // initialize preProd to 1
+  
+  // incrementing loop 
+
+    // multiply result at i by preProd
+
+    // multiply preProd by nums at i 
+
+  // initialize sufProd to 1
+
+  // decrementing loop 
+
+    // multiply result at i by sufProd
+
+    // multiply sufProd by nums at i 
+
+  // return result 
+
+}
 
 
+
+
+// TESTS:
+// console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+// console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
