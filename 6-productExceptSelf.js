@@ -87,32 +87,38 @@ const productExceptSelf = nums => {
   // to do this - use the result array to store prefix and suffix products instead of 2 separate arrays 
 const productExceptSelf2 = nums => {
   // assign constant n to the length of the nums array 
-  
+  const n = nums.length;
   // declare a constant result assigned to filling the array with 1's 
-
+  const result = Array(n).fill(1);
   // initialize preProd to 1
-  
+  let preProd = 1;
   // incrementing loop 
-
+  for (let i = 0; i < n; i++) {
     // multiply result at i by preProd
-
+    result[i] *= preProd;
     // multiply preProd by nums at i 
+    preProd *= nums[i];
+  }
 
   // initialize sufProd to 1
-
+  let sufProd = 1;
   // decrementing loop 
-
+  for (let i = n - 1; i >= 0; i--) {
     // multiply result at i by sufProd
-
+    result[i] *= sufProd;
     // multiply sufProd by nums at i 
+    sufProd *= nums[i];
+  }
 
+  // check for negatives 
+  for (let i = 0; i < n; i++) {
+    result[i] = result[i] === 0 ? 0 : result[i];
+  }
+    
   // return result 
-
+  return result;
 }
 
-
-
-
 // TESTS:
-// console.log(productExceptSelf([1, 2, 3, 4])); // should return [24, 12, 8, 6]
-// console.log(productExceptSelf([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
+console.log(productExceptSelf2([1, 2, 3, 4])); // should return [24, 12, 8, 6]
+console.log(productExceptSelf2([-1,1,0,-3,3])); // should return [0, 0, 9, 0, 0]
