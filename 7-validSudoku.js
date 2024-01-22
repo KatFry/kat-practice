@@ -140,7 +140,7 @@ const validSudoku1 = board => {
 }
 
 // TESTS:
-console.log(validSudoku1([["5","3",".",".","7",".",".",".","."]
+/* console.log(validSudoku1([["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
@@ -159,6 +159,26 @@ console.log(validSudoku1([["8","3",".",".","7",".",".",".","."]
 ,[".","6",".",".",".",".","2","8","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
+ */
+
+/* OPTION 2: just one nested for loop! */
+
+const validSudoku2 = board => {
+  // with this solution, I need a different set for every row, every column, every sub-box
+  const rows = [], cols = [], boxes = [];
+  // initialize sets by push a new set into arrays - 9 sets for 9 rows, etc., etc. 
+  for (let i = 0; i < board.length; i++) {
+    rows.push(new Set());
+    cols.push(new Set());
+    boxes.push(new Set()); 
+  }
+
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      const cell = board[i][j];
+    }
+  }
+}
 
 
 
