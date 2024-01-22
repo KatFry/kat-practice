@@ -55,26 +55,114 @@ board[i][j] is a digit 1-9 or '.'.
 
 // input: array of arrays 
 // output: boolean value 
-const validSudoku = board => {
-  // strategy: basically for it to be valid, have to make sure that neither row or column have duplicate of that number
-  // if that is true for any number,  then it is invalid (return false) 
 
-  // loop over the array of arrays 
 
-    // make sure within each array, there is only one copy of each number 
+/*  OVERALL STRATEGY: 
+strategy: basically for it to be valid, have to make sure that neither row or column have duplicate of that number
+  if that is true for any number,  then it is invalid (return false) 
 
-    // also make sure at same position in every other array (say 5 is in second column), 
-    // there isn't the same number at the same position (another 5 any number of rows down in second column) 
+  loop over the array of arrays 
 
-  // otherwise return true if all of these checks are passed 
-  
+    make sure within each array, there is only one copy of each number 
+
+    also make sure at same position in every other array (say 5 is in second column), 
+    there isn't the same number at the same position (another 5 any number of rows down in second column) 
+
+    final check - there is no repetition in any individual 9x9 sudoku box 
+
+  otherwise return true if all of these checks are passed 
+*/
+
+
+/* OPTION 1: brute force (aid from https://www.youtube.com/watch?v=wjkKd5yBxRA) */
+// since board size is fixed, time and space complexity is constant 
+// brute force because it is direct translation of thought process into code 
+
+const validSudoku1 = board => {
+  // nested for loop: check rows, then columns, then sub-boxes 
+  // i iterates from 0 to board length, 9, similar for j 
+  for (let i = 0; i < board.length; i++) {
+    // check for ROW duplicates by initializing a set before we examine each row
+    const set = new Set();
+    for (let j = 0; j < board[i].length; j++) {
+      // get value of specific cell with below syntax 
+      // i corresponds to rows, j to columns 
+      const cell = board[i][j];
+      // if the cell is empty, value is '.', then skip 
+      if (cell === '.') continue;
+      // if the set already has value of current cell, return false 
+      if (set.has(cell)) return false;
+      // but if we haven't seen that value before, add it to the set for future reference
+      set.add(cell);
+    }
+  }
+
+  // check for COLUMN duplicates (very similar to checking rows) 
+  for (let i = 0; i < board.length; i++) {
+    // check for ROW duplicates by initializing a set before we examine each row
+    const set = new Set();
+    for (let j = 0; j < board[i].length; j++) {
+      // get value of specific cell with below syntax 
+      // ONLY DIFFERENT THING: switch i and j here, so go through column first!! 
+      // j would correspond to rows, i to columns 
+      const cell = board[j][i];
+      // if the cell is empty, value is '.', then skip 
+      if (cell === '.') continue;
+      // if the set already has value of current cell, return false 
+      if (set.has(cell)) return false;
+      // but if we haven't seen that value before, add it to the set for future reference
+      set.add(cell);
+    }
+  }
+
+  // check each sub-box with another nested for loop
+  // i is less than 3 because we only have 3 rows of sub-boxes (same with columns)
+  // i represents row of sub-box, j represents column of sub-box
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const set = new Set();
+      // loop through each element of the sub-box (k and l are row and column of element in sub-box)
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) {
+          // get the value of the cell - find the formula 
+          const cell = board[3 * i + k][3 * j + l]; 
+          // do the checks again 
+          if (cell === '.') continue;
+          if (set.has(cell)) return false;
+          set.add(cell); 
+        }
+      }
+
+    }
+  }
+  // if all these conditions are passed, return true 
+  return true; 
 }
 
+// TESTS:
+console.log(validSudoku1([["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]));  // should return true
+
+console.log(validSudoku1([["8","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
 
 
 
-
-/* TESTS:
+/* // TESTS:
 console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
@@ -96,6 +184,27 @@ console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
 ,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
 */
 
+/* // TESTS:
+console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]));  // should return true
+
+console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
+*/
 
 
 
