@@ -56,7 +56,18 @@ board[i][j] is a digit 1-9 or '.'.
 // input: array of arrays 
 // output: boolean value 
 const validSudoku = board => {
-  // adding comments here 
+  // strategy: basically for it to be valid, have to make sure that neither row or column have duplicate of that number
+  // if that is true for any number,  then it is invalid (return false) 
+
+  // loop over the array of arrays 
+
+    // make sure within each array, there is only one copy of each number 
+
+    // also make sure at same position in every other array (say 5 is in second column), 
+    // there isn't the same number at the same position (another 5 any number of rows down in second column) 
+
+  // otherwise return true if all of these checks are passed 
+  
 }
 
 
