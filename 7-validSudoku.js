@@ -217,16 +217,35 @@ console.log(validSudoku2([["8","3",".",".","7",".",".",".","."]
 ,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
  */
 
-/* OPTION 3:  */
+/* OPTION 3: have one set instead of arrays of sets */
 const validSudoku3 = board => {
+  const set = new Set();
 
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      const cell = board[i][j];
+      if (cell === '.') continue;
+      const boxNum = 3 * Math.floor(i / 3) + Math.floor(j / 3); 
+
+      // define variable row assigned to a string, specify what row and value
+      const row = `row: ${i}, value ${cell}`;
+      const col = `col: ${j}, value ${cell}`;
+      const box = `box: ${boxNum}, value ${cell}`;
+      // console.log(row);
+      // easily check for duplicates 
+      if (set.has(row) || set.has(col) || set.has(box)) return false;
+      set.add(row); 
+      set.add(col);
+      set.add(box);
+    }
+  }
+  // if all checks pass, return true
+  return true;
 }
 
 
-
-
 /* // TESTS:
-console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
+console.log(validSudoku3([["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
@@ -236,7 +255,7 @@ console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]]));  // should return true
 
-console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
+console.log(validSudoku3([["8","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
@@ -245,7 +264,4 @@ console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
 ,[".","6",".",".",".",".","2","8","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
-*/
-
-
-
+ */
