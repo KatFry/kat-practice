@@ -176,8 +176,18 @@ const validSudoku2 = board => {
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
       const cell = board[i][j];
+      if (cell === '.') continue;
+      // need to make sure we're using the right set since we have so many
+      // rows represented by i, columns represented by j 
+      // if we see a duplicate in either the row or the column, return false 
+      if (rows[i].has(cell) || cols[j].has(cell)) return false;
+      // record current value of cell in set for row i, and col j 
+      rows[i].add(cell); 
+      cols[j].add(cell);
     }
   }
+  // if all checks pass, return true
+  return true; 
 }
 
 
