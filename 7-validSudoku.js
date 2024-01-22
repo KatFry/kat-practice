@@ -162,6 +162,8 @@ console.log(validSudoku1([["8","3",".",".","7",".",".",".","."]
  */
 
 /* OPTION 2: just one nested for loop! */
+/* runs faster than first solution, but takes up more memory
+still constant time and space complexity bc board has fixed dimensions   */
 
 const validSudoku2 = board => {
   // with this solution, I need a different set for every row, every column, every sub-box
@@ -177,10 +179,13 @@ const validSudoku2 = board => {
     for (let j = 0; j < board[i].length; j++) {
       const cell = board[i][j];
       if (cell === '.') continue;
+      // formula for each individual box check:
+      const boxNum = 3 * Math.floor(i / 3) + Math.floor(j / 3); 
       // need to make sure we're using the right set since we have so many
       // rows represented by i, columns represented by j 
-      // if we see a duplicate in either the row or the column, return false 
-      if (rows[i].has(cell) || cols[j].has(cell)) return false;
+      // if we see a duplicate in either the row, column, or box, return false 
+      if (rows[i].has(cell) || cols[j].has(cell) || boxes[boxNum].has(cell)) 
+        return false;
       // record current value of cell in set for row i, and col j 
       rows[i].add(cell); 
       cols[j].add(cell);
@@ -190,10 +195,8 @@ const validSudoku2 = board => {
   return true; 
 }
 
-
-
 /* // TESTS:
-console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
+console.log(validSudoku2([["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
@@ -203,7 +206,7 @@ console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]]));  // should return true
 
-console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
+console.log(validSudoku2([["8","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]
 ,[".","9","8",".",".",".",".","6","."]
 ,["8",".",".",".","6",".",".",".","3"]
@@ -212,7 +215,15 @@ console.log(validSudoku([["8","3",".",".","7",".",".",".","."]
 ,[".","6",".",".",".",".","2","8","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]])); // should return false (for reasoning above)
-*/
+ */
+
+/* OPTION 3:  */
+const validSudoku3 = board => {
+
+}
+
+
+
 
 /* // TESTS:
 console.log(validSudoku([["5","3",".",".","7",".",".",".","."]
