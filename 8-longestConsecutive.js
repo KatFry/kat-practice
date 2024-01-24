@@ -19,6 +19,19 @@ Output: 9 */
 // input: array of numbers 
 // output: number 
 const longestConsecutive = nums => {
+  // initialize a set to store the numbers 
+  
+  // initialize a variable length to 0 
+
+  // insert all the numbers from the array into the set 
+
+  // check if each number in the array is the start of the sequence 
+  // do this by making sure the previous num (num - 1) is not in the set 
+
+  // if it is the start, start expanding from there
+  // while loop - while next number (num + 1) is in the set, increment length of sequence 
+  
+  // return the max length
 
 }
 
