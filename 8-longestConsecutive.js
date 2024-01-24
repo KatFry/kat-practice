@@ -19,20 +19,32 @@ Output: 9 */
 // input: array of numbers 
 // output: number 
 const longestConsecutive = nums => {
-  // initialize a set to store the numbers 
-  
-  // initialize a variable length to 0 
-
-  // insert all the numbers from the array into the set 
-
+  // check: if nums doesn't exist or the length is 0, return 0
+  if (!nums || nums.length === 0) return 0;
+  // initialize a set to store the numbers (inserting nums)
+  const numSet = new Set(nums);
+  // initialize a variable maxLen to 0 
+  let maxLen = 0;
   // check if each number in the array is the start of the sequence 
   // do this by making sure the previous num (num - 1) is not in the set 
-
-  // if it is the start, start expanding from there
-  // while loop - while next number (num + 1) is in the set, increment length of sequence 
-  
+  for (const num of nums) {
+    if (!numSet.has(num - 1)) {
+      // then assign currentNum to that num
+      let currentNum = num;
+      // assign currentLen to 1 
+      let currentLen = 1;
+      // if it is the start, start expanding from there
+      while (numSet.has(currentNum + 1)) {
+        // increment both currentNum and currentLen
+        currentNum++;
+        currentLen++;
+      }
+      // assign maxLen to Math.max between maxLen and currentLen
+      maxLen = Math.max(maxLen, currentLen);
+    }
+  }
   // return the max length
-
+  return maxLen;
 }
 
 /* // TESTS:
