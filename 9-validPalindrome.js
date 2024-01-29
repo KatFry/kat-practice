@@ -29,26 +29,27 @@ Since an empty string reads the same forward and backward, it is a palindrome. *
 // input: string (can have commas, special characters, capitals)
 // output: boolean - true if palindrome, false if not 
 const isPalindrome = str => {
-  // create regex to replace special characters with '' 
-
-  // create leftIndex variable to keep track of left pointer 
-
-  // create rightIndex variable to keep track of right pointer 
-
-  // create while loop until the pointers equal one another 
-
+  // create regex to replace special characters with '' (globally, including lower and uppercases) (^ = not)
+  str = str.replace(/[^a-z0-9]/gi, "")
+  // create leftIndex variable to keep track of left pointer (initialize to 0)
+  let leftIndex = 0;
+  // create rightIndex variable to keep track of right pointer (initialize to length of str minus 1)
+  let rightIndex = str.length - 1;
+  // create while loop until the pointers equal one another, while left is less than right 
+  while (leftIndex < rightIndex) {
     // create condition to see if values of pointers don't equal to each other, return false
-
+    if (str[leftIndex].toLowerCase() !== str[rightIndex].toLowerCase()) return false;
     // increment leftIndex
-
+    leftIndex++;
     // decrement rightIndex 
-
+    rightIndex--;
+  }
   // return true because all values in the string are equal to each other 
-
+  return true; 
 }
 
 /* // TESTS:
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true 
 console.log(isPalindrome("race a car")); // false
 console.log(isPalindrome(" ")); // true 
-*/
+ */
