@@ -26,6 +26,11 @@ Since an empty string reads the same forward and backward, it is a palindrome. *
 /* help from: https://www.youtube.com/watch?v=UaS7aeUnLP0 */
 
 
+/* space and time complexity:
+- time: O(n), just a simple loop
+- space: O(1), storing constant variables 
+*/
+
 // input: string (can have commas, special characters, capitals)
 // output: boolean - true if palindrome, false if not 
 const isPalindrome = str => {
