@@ -27,7 +27,27 @@ Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 */
 
+// input: nums array, target number 
+// output: array of indices of nums that add up to target 
+
+/* Use the two-pointer method here as well! */
 const twoSum = (nums, target) => {
+  // initialize a variable left to 0
+
+  // initialize a variable right to nums.length minus 1 
+
+  // loop while the left is less than the right 
+
+    // assign a constant sum to the nums at index of left plus nums at index of right 
+
+    // check: if the sum is strictly equal to the target, return array of indices 
+    // (add 1 to each because the indices are 1-based
+    
+    // else if the sum is less than the target, increment left
+
+    // else (sum is greater than target), decrement right 
+
+  // return an empty array if there is no solution 
 
 }
 
