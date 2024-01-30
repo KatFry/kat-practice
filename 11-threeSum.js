@@ -26,6 +26,17 @@ Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 */
 
+/* time and space complexity of below solution:
+- time: 
+  - sorting: nums.sort() has complexity of O(n log n), n is length of input array 
+  - two-pointer approach: O(n), where n is length of input array, constant time operations in loop
+  - overall: because of sorting, overall is O(n log n)
+- space:
+  - result array: worst case, O(n) to store multiple triplets
+  - other variables: constant space, so don't depend on size of input array 
+This is overall efficient given the problem and considering the need to sort the array. 
+*/
+
 // input: array 
 // output: array of arrays of triplets that sum up to 0 
 const threeSum = nums => {
