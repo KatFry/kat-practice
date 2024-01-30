@@ -30,6 +30,11 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 // input: nums array, target number 
 // output: array of indices of nums that add up to target 
 
+/* time and space complexity of below solution:
+- time: linear - O(n), n is length of input array 
+- space:  constant - uses 2 pointers and a few scalar variables, space required independent of input array 
+*/
+
 /* Use the two-pointer method here as well! */
 const twoSum = (nums, target) => {
   // initialize a variable left to 0
