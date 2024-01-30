@@ -21,7 +21,32 @@ Input: height = [1,1]
 Output: 1
 */
 
+// input: height (array of integers)
+// output: number (maximum amount of water container can store) 
 const maxArea = height => {
+  // initialize maxArea variable to 0
+
+  // initialize left pointer to index 0
+
+  // initialize right pointer to index height.length minus 1
+
+  // calculate area between lines at current left and right positions:
+  // formula: min(height[left], height[right]) * right - left 
+  // loop while left is less than right
+
+    // assign const h to Math.min between height at left and height at right
+
+    // assign const w to right minus left 
+
+    // assign const area to h times w 
+
+    // reassign maxArea to Math.max between maxArea and area 
+
+    // if height[left] is less than height[right], increment left (to move pointers inward)
+
+    // else decrement right 
+
+  // return maxArea 
 
 }
 
