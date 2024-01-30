@@ -26,8 +26,31 @@ Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 */
 
+// input: array 
+// output: array of arrays of triplets that sum up to 0 
 const threeSum = nums => {
+  // sort the input array in ascending order and assign it to a const sortNums
 
+  // initialize an empty result array to store triplets
+
+  // loop through each array element
+
+    // fix current element as potential first element of triplet (nums[i])
+
+    // initialize left pointer
+
+    // initialize right pointer
+
+    // if sum of triplet is zero, add it to result array 
+
+    // if sum is less than zero, move left pointer to right (to increase sum)
+
+    // if sum is greater than zero, move right pointer to left (to decrease sum) 
+
+    // skip identical elements 
+
+  // return the result array 
+  
 }
 
 /* // TESTS:
