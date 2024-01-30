@@ -21,6 +21,11 @@ Input: height = [1,1]
 Output: 1
 */
 
+/* time and space complexity:
+- time: O(n), each pointer move processes 1 element in the array, and never revisit same element 
+- space: O(1), uses constant amount of space 
+*/
+
 // input: height (array of integers)
 // output: number (maximum amount of water container can store) 
 const maxArea = height => {
@@ -51,6 +56,6 @@ const maxArea = height => {
   return maxArea;
 }
 
-// TESTS:
+/* // TESTS:
 console.log(maxArea([1,8,6,2,5,4,8,3,7])); // -> 49
-console.log(maxArea([1,1])); // -> 1
+console.log(maxArea([1,1])); // -> 1 */
