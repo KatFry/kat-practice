@@ -33,27 +33,27 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 /* Use the two-pointer method here as well! */
 const twoSum = (nums, target) => {
   // initialize a variable left to 0
-
+  let left = 0;
   // initialize a variable right to nums.length minus 1 
-
+  let right = nums.length - 1;
   // loop while the left is less than the right 
-
+  while (left < right) {
     // assign a constant sum to the nums at index of left plus nums at index of right 
-
+    const sum = nums[left] + nums[right];
     // check: if the sum is strictly equal to the target, return array of indices 
     // (add 1 to each because the indices are 1-based
-    
+    if (sum === target) return [left + 1, right + 1];
     // else if the sum is less than the target, increment left
-
+    else if (sum < target) left++;
     // else (sum is greater than target), decrement right 
-
+    else right--;
+  }
   // return an empty array if there is no solution 
-
+  return [];
 }
 
 /* // TESTS:
 console.log(twoSum([2, 7, 11, 15], 9)); // [1, 2]
 console.log(twoSum([2, 3, 4], 6)); // [1,3]
 console.log(twoSum([-1, 0], -1)); // [1,2]
-*/
-
+ */
