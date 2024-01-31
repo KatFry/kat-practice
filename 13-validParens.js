@@ -63,4 +63,6 @@ const validParens = s => {
 console.log(validParens('()')); // -> true
 console.log(validParens('()[]{}')); // -> true
 console.log(validParens('(]')); // -> false 
+console.log(validParens(')(')); 
  */
+
