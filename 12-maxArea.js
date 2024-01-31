@@ -44,7 +44,7 @@ const maxArea = height => {
     // assign const w to right minus left 
     const w = right - left;
     // assign const area to h times w 
-    const area = h * w; 
+    const area = h * w;
     // reassign maxArea to Math.max between maxArea and area 
     maxArea = Math.max(maxArea, area);
     // if height[left] is less than height[right], increment left (to move pointers inward)
@@ -56,6 +56,6 @@ const maxArea = height => {
   return maxArea;
 }
 
-/* // TESTS:
+// TESTS:
 console.log(maxArea([1,8,6,2,5,4,8,3,7])); // -> 49
-console.log(maxArea([1,1])); // -> 1 */
+console.log(maxArea([1,1])); // -> 1
