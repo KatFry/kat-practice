@@ -32,16 +32,25 @@ minStack.top();    // return 0
 minStack.getMin(); // return -2
 */
 
+// initialize stack to empty object, length to 0 
 const MinStack = () => {
-
+  this.stack = {};
+  this.length = 0;
 }
 
+// takes value and pushes it to end of stack 
 MinStack.prototype.push = val => {
-
+  // assign last key value pair in object to the passed-in val, and increment length
+  this.stack[this.length] = val;
+  this.length++; 
 };
 
+// remove last element from the stack and decrement length, and return removed (popped) element
 MinStack.prototype.pop = () => {
-
+  const popped = this.stack[this.length - 1];
+  delete this.stack[this.length - 1];
+  this.length--;
+  return popped;
 };
 
 MinStack.prototype.top = () => {
