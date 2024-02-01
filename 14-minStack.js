@@ -33,13 +33,13 @@ minStack.getMin(); // return -2
 */
 
 // initialize 2 stacks, a dataStack and a minStack (to calculate minimum later) 
-const MinStack = () => {
+function MinStack() {
   this.dataStack = [];
   this.minStack = [];
 }
 
 // takes value and pushes it to end of stack 
-MinStack.prototype.push = val => {
+MinStack.prototype.push = function(val) {
   this.dataStack.push(val);
   // if minStack length is 0 OR the passed-in val is less than or equal to calling getMin, 
   if (this.minStack.length === 0 || val <= this.getMin()) {
@@ -49,7 +49,7 @@ MinStack.prototype.push = val => {
 };
 
 // remove last element from the stack, and return removed (popped) element
-MinStack.prototype.pop = () => {
+MinStack.prototype.pop = function() {
   // assign const popped to popping the last element in the dataStack
   const popped = this.dataStack.pop();
   // if popped equals calling getMin, then pop the last element of the minStack
@@ -57,11 +57,21 @@ MinStack.prototype.pop = () => {
 };
 
 // return the top element of the dataStack
-MinStack.prototype.top = () => {
+MinStack.prototype.top = function() {
   return this.dataStack[this.dataStack.length - 1];
 };
 
 // return the top element of minStack, which is the minimum element of the stack
-MinStack.prototype.getMin = () => {
+MinStack.prototype.getMin = function() {
   return this.minStack[this.minStack.length - 1];
 };
+
+/* //TESTS:
+const minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+console.log(minStack.getMin()); // return -3
+minStack.pop();
+console.log(minStack.top());    // return 0
+console.log(minStack.getMin()); // return -2 */
