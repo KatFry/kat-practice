@@ -56,11 +56,12 @@ MinStack.prototype.pop = () => {
   if (popped === this.getMin()) this.minStack.pop(); 
 };
 
-
+// return the top element of the dataStack
 MinStack.prototype.top = () => {
-
+  return this.dataStack[this.dataStack.length - 1];
 };
 
+// return the top element of minStack, which is the minimum element of the stack
 MinStack.prototype.getMin = () => {
-
+  return this.minStack[this.minStack.length - 1];
 };
