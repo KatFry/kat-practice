@@ -41,26 +41,31 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 
 const evalRPN = tokens => {
   // initialize an empty stack
-
+  const stack = [];
   // iterate through each token in the array
-
-    // if the token is an operand...
-    
-      // convert to an integer
-      
-      // push it to the stack
-
-    // if the token is an operator...
-    
-      // pop the required number of operands from the stack
-
-      // perform the operation
-
+  for (const token of tokens) {
+    // if the token is an operand, convert it to an integer and push it to the stack
+    if (isOperand(token)) stack.push(parseInt(token));
+    // else if the token is an operator...
+    else {
+      // pop the last operand from the stack and assign it to operand1
+      const operand1 = stack.pop();
+      // pop the now-last operand from the stack and assign it to operand2
+      const operand2 = stack.pop();
+      // assign a constant result to invoking the performOperation func, passing in token, op1, and op2
+      const result = performOperation(token, operand1, operand2);
       // push the result back onto the stack
-
-  // return the result 
-
+      stack.push(result);
+    }
+  }
+  // return the result (the last popped value)
+  return stack.pop();
 }
+
+// create a helper func isOperand to check if the array item is an operand
+
+
+// 
 
 
 /* // TESTS:
