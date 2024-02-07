@@ -17,6 +17,11 @@ Input: temperatures = [30,60,90]
 Output: [1,1,0]
 */
 
+/* time and space complexity:
+- time: O(n) - n is the length of the input array (push and pop take constant time)
+- space: O(n) - n is the length of the input array worst case, answer array also O(n) space 
+*/
+
 // input: array of nums (temperatures)
 // output: array of nums (days to wait before getting a warmer temperature)
 const dailyTemperatures = (temps) => {
