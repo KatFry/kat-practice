@@ -40,6 +40,25 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 // output: number
 
 const evalRPN = tokens => {
+  // initialize an empty stack
+
+  // iterate through each token in the array
+
+    // if the token is an operand...
+    
+      // convert to an integer
+      
+      // push it to the stack
+
+    // if the token is an operator...
+    
+      // pop the required number of operands from the stack
+
+      // perform the operation
+
+      // push the result back onto the stack
+
+  // return the result 
 
 }
 
