@@ -10,6 +10,12 @@ Input: n = 1
 Output: ["()"]
 */
 
+/* time and space complexity:
+- time: exponential time complexity (O(2^2n)) - but actual num of func calls pruned due to backtracking!
+(so time complexity actually efficient for small values of n)
+- space: linear (O(n)) 
+*/
+
 // input: number
 // output: array of strings - possible valid parens generated 
 const generateParens = n => {
