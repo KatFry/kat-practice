@@ -48,10 +48,10 @@ const evalRPN = tokens => {
     if (isOperand(token)) stack.push(parseInt(token));
     // else if the token is an operator...
     else {
-      // pop the last operand from the stack and assign it to operand1
-      const operand1 = stack.pop();
-      // pop the now-last operand from the stack and assign it to operand2
+      // pop the last operand from the stack and assign it to operand2
       const operand2 = stack.pop();
+      // pop the now-last operand from the stack and assign it to operand1
+      const operand1 = stack.pop();
       // assign a constant result to invoking the performOperation func, passing in token, op1, and op2
       const result = performOperation(token, operand1, operand2);
       // push the result back onto the stack
@@ -70,10 +70,25 @@ const isOperand = (token) => {
 }
 
 // create a helper func performOperation with cases to handle each operator 
+const performOperation = (operator, operand1, operand2) => {
+  // use switch case to handle each operation 
+  switch (operator) {
+    case "+": 
+      return operand1 + operand2;
+    case "-": 
+      return operand1 - operand2;
+    case "*": 
+      return operand1 * operand2;
+    case "/": 
+      // Math.trunc returns the integer part of a number by removing any fractional digits 
+      return Math.trunc(operand1 / operand2);
+    // default case: throw an error
+    default: 
+      throw new Error("Invalid operator"); 
+  }
+}
 
-
-/* // TESTS:
+// TESTS:
 console.log(evalRPN(["2","1","+","3","*"])); // -> 9
 console.log(evalRPN(["4","13","5","/","+"])); // -> 6
 console.log(evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"])); // -> 22
-*/
