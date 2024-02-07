@@ -39,6 +39,15 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 // input: array of strings
 // output: number
 
+/* time and space complexity: linear for both 
+- time:
+  - iterating through tokens: O(n) - n is number of tokens in input array
+  - performing operations: worst case is constant time complexity
+  - overall: O(n), where n is the length of the input array 
+- space:
+  - overall: O(n), where n is the length of the input array 
+*/
+
 const evalRPN = tokens => {
   // initialize an empty stack
   const stack = [];
