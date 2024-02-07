@@ -63,9 +63,13 @@ const evalRPN = tokens => {
 }
 
 // create a helper func isOperand to check if the array item is an operand
+// accepts a token, returns true if the token is an operand and the program can handle it
+// (if it returns false, that means the token is an operator)
+const isOperand = (token) => {
+  return !isNaN(parseInt(token));
+}
 
-
-// 
+// create a helper func performOperation with cases to handle each operator 
 
 
 /* // TESTS:
