@@ -17,8 +17,29 @@ Input: temperatures = [30,60,90]
 Output: [1,1,0]
 */
 
+// input: array of nums (temperatures)
+// output: array of nums (days to wait before getting a warmer temperature)
 const dailyTemperatures = (temps) => {
+  // initialize an array 'answer' of same length as input array 'temps'
 
+  // initialize an empty stack
+
+  // iterate through elements in the temps array 
+
+    // while stack is not empty and current temp is greater than temp at index at top of stack 
+
+      // pop index from stack
+
+      // set answer[index] to difference between currIndex and popped index 
+
+    // push current index to the stack 
+
+  // while stack length is greater than 0, 
+
+    // remaining indices have no warmer day - answer[stack.pop()] equals 0 
+
+  // return answer 
+  
 }
 
 
