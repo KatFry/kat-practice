@@ -46,5 +46,4 @@ const generateParens = n => {
 
 /* // TESTS:
 console.log(generateParens(3)); // -> ["((()))","(()())","(())()","()(())","()()()"]
-console.log(generateParens(1)); // -> ["()"]
-*/
+console.log(generateParens(1)); // -> ["()"] */
