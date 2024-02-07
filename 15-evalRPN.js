@@ -58,7 +58,7 @@ const evalRPN = tokens => {
       stack.push(result);
     }
   }
-  // return the result (the last popped value)
+  // return the top element of the stack (final result)
   return stack.pop();
 }
 
@@ -88,7 +88,8 @@ const performOperation = (operator, operand1, operand2) => {
   }
 }
 
-// TESTS:
+/* // TESTS:
 console.log(evalRPN(["2","1","+","3","*"])); // -> 9
 console.log(evalRPN(["4","13","5","/","+"])); // -> 6
 console.log(evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"])); // -> 22
+ */
