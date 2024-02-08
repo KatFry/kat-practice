@@ -18,6 +18,15 @@ Traverse the histogram bars, maintaining a stack of indices that represent the h
 order. 
 */
 
+/* time and space complexity:
+- time: linear
+  - iteration through each bar: O(n) - n is the number of bars in the histogram
+  - each bar pushed and popped from the stack at most once, so overall is still O(n)
+- space: linear 
+  - O(n) - where n is the number of bars in the histogram 
+  - constant extra variables don't contribute significantly to space 
+*/
+
 // input: array of heights - integers 
 // output: number (area of largest rectangle in histogram)
 const largestRecArea = heights => {
