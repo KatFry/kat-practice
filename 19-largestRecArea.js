@@ -28,12 +28,13 @@ const largestRecArea = heights => {
   // iterate through the passed-in array of heights
   for (let i = 0; i < heights.length; i++) {
     // while the stack is not empty AND the current bar's height is less than bar at index at stack's top
-    // access this by heights[stack[stack.length - 1]]
+    // access this by heights[stack[stack.length - 1]] 
     while (stack.length > 0 && heights[i] < heights[stack[stack.length - 1]]) {
       // assign a const height to the last item popped from the stack 
       const height = heights[stack.pop()];
       // assign a const width to ternary operator: check if stack length is 0
       // if so, assign it to i, else assign it to i minus the el at top of stack minus 1 
+      // because its the bar to its immediate left 
       const width = stack.length === 0 ? i : i - stack[stack.length - 1] - 1; 
       // reassign maxArea to Math.max of maxArea and the new area (height times width) 
       maxArea = Math.max(maxArea, height * width); 
@@ -60,3 +61,25 @@ const largestRecArea = heights => {
 console.log(largestRecArea([2,1,5,6,2,3])); // -> 10
 console.log(largestRecArea([2,4])); // -> 4
  */
+
+/* ChatGPT's pseudocode explanation of what is happening above:
+For each bar at index i in the histogram:
+  While the stack is not empty and the current bar's height is less than the height of the bar 
+  at the top of the stack:
+    - Pop the index from the stack (representing a potential height).
+    - Calculate the width of the rectangle with the popped height as the rightmost height:
+      - If the stack is empty, width = i (extends to the leftmost end of the histogram).
+      - If the stack is not empty, width = i - stack[top] - 1 (distance to the bar to the immediate left).
+    - Calculate the area using height and width and update maxArea if needed.
+  Push the current index i onto the stack.
+
+While the stack is not empty:
+  - Pop the index from the stack (representing a potential height).
+  - Calculate the width of the rectangle with the popped height as the rightmost height:
+    - If the stack is empty, width = i (extends to the leftmost end of the histogram).
+    - If the stack is not empty, width = i - stack[top] - 1 (distance to the bar to the immediate left).
+  - Calculate the area using height and width and update maxArea if needed.
+
+Return maxArea.
+*/
+
