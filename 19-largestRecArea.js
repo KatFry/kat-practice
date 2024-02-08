@@ -34,7 +34,7 @@ const largestRecArea = heights => {
       const height = heights[stack.pop()];
       // assign a const width to ternary operator: check if stack length is 0
       // if so, assign it to i, else assign it to i minus the el at top of stack minus 1 
-      const width = stack.length === 0 ? i : i - stack[stack.length - 1]; 
+      const width = stack.length === 0 ? i : i - stack[stack.length - 1] - 1; 
       // reassign maxArea to Math.max of maxArea and the new area (height times width) 
       maxArea = Math.max(maxArea, height * width); 
     }
@@ -59,4 +59,4 @@ const largestRecArea = heights => {
 /* // TESTS:
 console.log(largestRecArea([2,1,5,6,2,3])); // -> 10
 console.log(largestRecArea([2,4])); // -> 4
-*/
+ */
