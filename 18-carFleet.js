@@ -78,8 +78,7 @@ const carFleet = (target, position, speed) => {
   return fleets;
 }
 
-/* // TESTS:
+// TESTS:
 console.log(carFleet(12, [10,8,0,5,3], [2,4,1,1,3])); // -> 3
 console.log(carFleet(10, [3], [3])); // -> 1 
 console.log(carFleet(100, [0, 2, 4], [4, 2, 1])); // -> 1 
-*/
