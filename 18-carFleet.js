@@ -47,7 +47,32 @@ meeting each other at 6. The fleet moves at speed 1 until it reaches target.
 // input: target (number), position (array), speed (array) 
 // output: number (number of car fleets that will arrive at destination)
 const carFleet = (target, position, speed) => {
+  // declare a constant n assigned to the length of the position array 
 
+  // initialize a constant cars to an empty array
+
+  // iterate over the position of the cars 
+
+    // combine the position at i and the speed at i as a pair into an object, pushing it to the stack
+
+  // sort the cars into position by descending order (b.position minus a.position(accessing object))
+
+  // initialize a variable fleets to 0
+
+  // initialize maxTime to -Infinity
+
+  // iterate over the n to simulate movements of the car
+
+    // declare a const time assigned to the target minus the car's position i divided by that car's speed 
+
+    // check if the time is greater than the maxTime, 
+
+      // if so, reassign maxTime to that time (car forms a new fleet)
+
+      // increment the fleets 
+
+  // return the fleets
+  
 }
 
 /* // TESTS:
