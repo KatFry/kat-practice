@@ -49,36 +49,37 @@ meeting each other at 6. The fleet moves at speed 1 until it reaches target.
 const carFleet = (target, position, speed) => {
   // declare a constant n assigned to the length of the position array 
   const n = position.length;
-  // initialize a constant cars to an empty array
+  // declare a const cars initialized to an empty array 
   const cars = [];
-  // iterate over the position of the cars 
+  // iterate over n 
   for (let i = 0; i < n; i++) {
-    // combine the position at i and the speed at i as a pair into an object, pushing it to the stack
+    // combine the position and speed into key/value object pairs and push to the cars stack 
     cars.push({position: position[i], speed: speed[i]}); 
   }
-  // sort the cars into position by descending order (b.position minus a.position(accessing object))
+  // sort the cars in descending order by position 
   cars.sort((a, b) => b.position - a.position);
-  // initialize a variable fleets to 0
+  // declare a variable fleets initialized to 0
   let fleets = 0;
-  // initialize maxTime to -Infinity
+  // declare a variable maxTime initialized to -Infinity
   let maxTime = -Infinity;
-  // iterate over the n to simulate movements of the car
+  // iterate over n again 
   for (let i = 0; i < n; i++) {
-    // declare a const time assigned to the target minus the car's position i divided by that car's speed 
+    // declare a const time assigned to the target minus the car at i's position divided by its speed 
     const time = (target - cars[i].position) / cars[i].speed;
-    // check if the time is greater than the maxTime, 
+    // check if the time is greater than the maxTime...
     if (time > maxTime) {
-      // if so, reassign maxTime to that time (car forms a new fleet)
+      // if so, reassign maxTime to time (car forms a new fleet)
       maxTime = time;
-      // increment the fleets 
+      // increment the fleets variable
       fleets++;
     }
   }
-  // return the fleets
+  // return the fleets 
   return fleets;
 }
 
-// TESTS:
+/* // TESTS:
 console.log(carFleet(12, [10,8,0,5,3], [2,4,1,1,3])); // -> 3
 console.log(carFleet(10, [3], [3])); // -> 1 
 console.log(carFleet(100, [0, 2, 4], [4, 2, 1])); // -> 1 
+ */
