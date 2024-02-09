@@ -15,11 +15,19 @@ Output: -1
 Explanation: 2 does not exist in nums so return -1
 */
 
+// input: array of integers, target number
+// output: index of target, otherwise -1 
 const search = (nums, target) => {
-
+  // iterate through the nums array 
+  for (let i = 0; i < nums.length; i++) {
+    // if nums at i equals the target anywhere, return that index
+    if (nums[i] === target) return i;
+  }
+  // return -1 otherwise
+  return -1; 
 }
 
 /* // TESTS:
 console.log(search([-1,0,3,5,9,12], 9)); // -> 4
 console.log(search([-1,0,3,5,9,12], 2)); // -> -1
-*/
+ */
