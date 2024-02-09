@@ -46,14 +46,16 @@ const binSearch = (nums, target) => {
   let left = 0; 
   // initialize a variable right to nums.length minus 1 to indicate the end 
   let right = nums.length - 1;
+  console.log(right);
   // iterate while left is less than or equal to right
-  while (left <= right) {
+  while (left <= right) { 
     // declare a constant mid assigned to Math.floor of left plus right divided by 2
-    const mid = Math.floor((left + right) / 2);
+    const mid = Math.floor((left + right) / 2); 
+    console.log(mid);
     // check: if nums at mid is the target, return mid
-    if (nums[mid] === target) return mid;
+    if (nums[mid] === target) return mid; 
     // else if nums at mid is less than the target, reassign left to mid plus 1 (target may be in right half)
-    else if (nums[mid] < target) left = mid + 1;
+    else if (nums[mid] < target) left = mid + 1; 
     // else reassign right to mid minus 1 (target may be in left half) 
     else right = mid - 1;
   }
@@ -64,4 +66,4 @@ const binSearch = (nums, target) => {
 /* // TESTS:
 console.log(binSearch([-1,0,3,5,9,12], 9)); // -> 4
 console.log(binSearch([-1,0,3,5,9,12], 2)); // -> -1
- */
+*/
