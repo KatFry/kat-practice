@@ -11,7 +11,11 @@ In this case, 6 units of rain water (blue section) are being trapped.
 Example 2:
 Input: height = [4,2,0,3,2,5]
 Output: 9
+*/
 
+/* time and space complexity:
+- time: O(n) - n is the number of elements in the elevation map
+- space: O(1) - constant, uses many constant variables, doesn't scale based on size of input 
 */
 
 // input: array of integers (representing an elevation map)
