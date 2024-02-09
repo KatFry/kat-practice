@@ -15,7 +15,9 @@ Output: -1
 Explanation: 2 does not exist in nums so return -1
 */
 
-/* OPTION 1: normal O(n) linear approach */
+/* OPTION 1: normal O(n) linear approach 
+  O(1) constant space complexity here 
+*/
 
 // input: array of integers, target number
 // output: index of target, otherwise -1 
@@ -35,7 +37,8 @@ console.log(search([-1,0,3,5,9,12], 2)); // -> -1
 */
 
 /* OPTION 2: binary search approach (O log n - logarithmic)
-  this approach is actually more efficient than the linear approach! 
+  this approach is actually more efficient than the linear approach because the array is sorted! 
+  O(1) constant space complexity here as well 
 */
 
 const binSearch = (nums, target) => {
