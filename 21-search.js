@@ -34,7 +34,9 @@ console.log(search([-1,0,3,5,9,12], 9)); // -> 4
 console.log(search([-1,0,3,5,9,12], 2)); // -> -1
 */
 
-/* OPTION 2: binary search approach (O log n - logarithmic) */
+/* OPTION 2: binary search approach (O log n - logarithmic)
+  this approach is actually more efficient than the linear approach! 
+*/
 
 const binSearch = (nums, target) => {
   // initialize a variable left to 0 to indicate the start
@@ -56,8 +58,7 @@ const binSearch = (nums, target) => {
   return -1;
 }
 
-
 /* // TESTS:
 console.log(binSearch([-1,0,3,5,9,12], 9)); // -> 4
 console.log(binSearch([-1,0,3,5,9,12], 2)); // -> -1
-*/
+ */
