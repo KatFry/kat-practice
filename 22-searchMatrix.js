@@ -16,6 +16,11 @@ Input: matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
 Output: false
 */
 
+/* time and space complexity:
+- time: O(log (m*n)) -  m is the number of rows, n is average number of columns in each row 
+- space: O(1) - constant amount of extra space regardless of input 
+*/
+
 const searchMatrix = (matrix, target) => {
   // initial check: if the matrix is empty or has no rows or columns, return false because target can't be found
   if (!matrix || matrix.length === 0 || matrix[0].length === 0) return false;
