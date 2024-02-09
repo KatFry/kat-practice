@@ -14,8 +14,35 @@ Output: 9
 
 */
 
+// input: array of integers (representing an elevation map)
+// output: number (how much water it can trap after raining) 
 const trap = height => {
+  // initialize two pointers, left and right, pointing to start and end of elevation map 
+  
+  // initialize maxLeft and maxRight variables to 0
 
+  // initialize totalWater variable to 0
+ 
+  // while the left pointer is less than or equal to the right pointer 
+
+    // check: if the height at the left is less than or equal to the height at the right  
+
+      // assign maxLeft to Math.max of maxLeft and the height at the left
+
+      // reassign totalWater to adding Math.max of 0 and maxLeft minus height at the left 
+
+      // increment the left pointer 
+
+    // else 
+
+      // reassign maxRight to Math.max of maxRight and height at right 
+
+      // reassign totalWater to adding Math.max of 0 and maxRight minus height at the right 
+
+      // decrement the right pointer 
+
+  // return totalWater 
+  
 }
 
 /* // TESTS:
