@@ -17,30 +17,33 @@ Output: false
 */
 
 const searchMatrix = (matrix, target) => {
+  // initial check: if the matrix is empty or has no rows or columns, return false because target can't be found
+  if (!matrix || matrix.length === 0 || matrix[0].length === 0) return false;
   // assign a const m to the length of the entire matrix (signifying rows of the matrix)
-
-  // assign a const n to the length of the matrix at 0 (signifying the number of columns in the matrix) 
-
+  const m = matrix.length;
+  // assign a const n to the length of the matrix at 0 (signifying columns in the matrix) 
+  const n = matrix[0].length;
   // initialize variable left to the matrix at 0 at 0
-
-  // initialize a variable right to the matrix at m minus 1 at n minus 1 (last row and last column)
-
+  let left = matrix[0][0];
+  // initialize a variable right to the matrix at m minus 1 at n minus 1 (last el - last row and last column)
+  let right = matrix[m - 1][n - 1];
   // iterate while left is less than or equal to right 
-
-    // assign a const mid to the left plus Math.floor of right minus left divided by 2 
-
+  while (left <= right) {
+    // assign a const mid to the left plus Math.floor of right minus left divided by 2 (avg of L and R)
+    const mid = left + Math.floor((right - left) / 2);
     // assign a const midRow to Math.floor of mid divided by n 
-
+    const midRow = Math.floor(mid / n);
     // assign a const midCol to mid remainder n 
-
+    const midCol = mid % n;
     // check: if the matrix at midRow at midCol equals the target, return true
-
-    // else if the matrix at midRow at midCol is less than the target, reassign left to mid plus 1
-
-    // else reassign right to mid minus 1
-
+    if (matrix[midRow][midCol] === target) return true;
+    // else if it is less than the target, reassign left to mid plus 1 (target may be in right half)
+    else if (matrix[midRow][midCol] < target) left = mid + 1;
+    // else reassign right to mid minus 1 (target may be in left half) 
+    else right = mid - 1;
+  }
   // return false outside the loop if the target was never found 
-
+  return false;
 }
 
 /* // TESTS:
