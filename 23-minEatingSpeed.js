@@ -30,6 +30,11 @@ input: piles (array of integers), h (number of hours)
 output: number (eating speed)
 */
 
+/* time and space complexity:
+- time: O(n log m) - n is length of piles array, m is max number of bananas in a single pile 
+- space: O(1) - uses constant amount of additional space, doesn't scale with input size
+*/
+
 // first define a function canEatAll to check if it's possible to eat all the bananas withen the given time 
 // this function takes piles, k, and h as parameters 
 const canEatAll = (piles, k, h) => {
