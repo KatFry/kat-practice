@@ -28,6 +28,10 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 
 /* STRATEGY: divide into 2 sub-arrays and then determine which portion to search */
 
+/* time and space complexity:
+- time: O (log n) - as it performs binary search
+- space: O(1) - uses constant amount of additional space
+*/
 
 // input: nums (array of integers)
 // output: minimum number in the array 
