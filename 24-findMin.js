@@ -25,10 +25,28 @@ Output: 112
 Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
 */
 
+
+/* STRATEGY: divide into 2 sub-arrays and then determine which portion to search */
+
+
 // input: nums (array of integers)
 // output: minimum number in the array 
 const findMin = nums => {
-
+  // initialize left pointer to indicate the start of the array
+  let left = 0;
+  // initialize right pointer to indicate the end of the array 
+  let right = nums.length - 1;
+  // while left is less than right
+  while (left < right) {
+    // declare a const mid assigned to Math.floor of left plus right divided by 2 
+    const mid = Math.floor((left + right) / 2);
+    // if nums[mid] is greater than nums[right], reassign left to mid plus 1 (min el is in right half of array)
+    if (nums[mid] > nums[right]) left = mid + 1;
+    // else if nums[mid] is less than or equal to nums[right], reassign right to mid (min is in left half) 
+    else right = mid;
+  }
+  // return nums[left] - only position where nums[mid] is less than or equal to nums[right]
+  return nums[left];
 }
 
 /* // TESTS:
