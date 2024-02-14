@@ -21,12 +21,14 @@ Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
 
 Example 3:
 Input: nums = [11,13,15,17]
-Output: 11
+Output: 112
 Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
 */
 
+// input: nums (array of integers)
+// output: minimum number in the array 
 const findMin = nums => {
-  
+
 }
 
 /* // TESTS:
