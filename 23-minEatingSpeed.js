@@ -29,8 +29,21 @@ Output: 23
 
 // input: piles (array of integers), h (number of hours)
 // output: number (eating speed) 
-const minEatingSpeed = (piles, h) => {
+
+// first define a function canEatAll to check if it's possible to eat all the bananas withen the given time 
+// this function takes piles, k, and h as parameters 
+
+  // declare a variable hoursNeeded initialized to 0 
+
+  // iterate over the piles 
+
+    // add to the hoursNeeded variable Math.ceil of the pile divided by k (rounds up to smallest integer >= num)
+
+  // return the outcome of checking if hoursNeeded is less than or equal to h (hours available)
+
   
+const minEatingSpeed = (piles, h) => {
+
 }
 
 
