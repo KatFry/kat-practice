@@ -25,6 +25,8 @@ Input: piles = [30,11,23,4,20], h = 6
 Output: 23
 */
 
+// input: piles (array of integers), h (number of hours)
+// output: number (eating speed) 
 const minEatingSpeed = (piles, h) => {
 
 }
