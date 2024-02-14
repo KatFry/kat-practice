@@ -48,21 +48,22 @@ const canEatAll = (piles, k, h) => {
 const minEatingSpeed = (piles, h) => {
   // search space for k is between max number of bananas in a single pile 
   // initialize left pointer to 1 (minimum possible eating speed)
-
+  let left = 1;
   // initialize right pointer to Math.max of passing in piles array using spread syntax (max eating speed)
-
+  let right = Math.max(...piles);
   // while left is less than right 
-
+  while (left < right) {
     // declare a const mid assigned to Math.floor of left plus right divided by 2 
-
+    const mid = Math.floor((left + right) / 2);
     // if canEatAll returns true when passing in piles, mid, and h, search in left half for smaller k 
     // this indicates a smaller eating speed might be valid! 
-
+    if (canEatAll(piles, mid, h)) right = mid;
     // else search in right half for larger k (larger eating speed is needed!)
-
+    else left = mid + 1; 
+  }
   // return left (because at end of search, it points to smallest valid eating speed)
-  
-}
+  return left;
+} 
 
 
 /* // TESTS:
