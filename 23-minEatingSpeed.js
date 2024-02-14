@@ -25,25 +25,43 @@ Input: piles = [30,11,23,4,20], h = 6
 Output: 23
 */
 
-/* STRATEGY: binary search */
-
-// input: piles (array of integers), h (number of hours)
-// output: number (eating speed) 
+/* STRATEGY: binary search
+input: piles (array of integers), h (number of hours)
+output: number (eating speed)
+*/
 
 // first define a function canEatAll to check if it's possible to eat all the bananas withen the given time 
 // this function takes piles, k, and h as parameters 
-
+const canEatAll = (piles, k, h) => {
   // declare a variable hoursNeeded initialized to 0 
-
+  let hoursNeeded = 0;
   // iterate over the piles 
-
+  for (const pile of piles) {
     // add to the hoursNeeded variable Math.ceil of the pile divided by k (rounds up to smallest integer >= num)
-
+    // use Math.ceil because you need at least that many hours to eat it all 
+    hoursNeeded += Math.ceil(pile / k); 
+  }
   // return the outcome of checking if hoursNeeded is less than or equal to h (hours available)
+  return hoursNeeded <= h;
+}
 
-  
 const minEatingSpeed = (piles, h) => {
+  // search space for k is between max number of bananas in a single pile 
+  // initialize left pointer to 1 (minimum possible eating speed)
 
+  // initialize right pointer to Math.max of passing in piles array using spread syntax (max eating speed)
+
+  // while left is less than right 
+
+    // declare a const mid assigned to Math.floor of left plus right divided by 2 
+
+    // if canEatAll returns true when passing in piles, mid, and h, search in left half for smaller k 
+    // this indicates a smaller eating speed might be valid! 
+
+    // else search in right half for larger k (larger eating speed is needed!)
+
+  // return left (because at end of search, it points to smallest valid eating speed)
+  
 }
 
 
