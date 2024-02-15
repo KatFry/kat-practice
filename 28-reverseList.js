@@ -22,24 +22,21 @@ Output: []
 
 
 const reverseList = head => {
-  // if the array length is 0, return the head (input array)
-
   // initialize a variable prev to null
-
-  // initialize a variable current to head 
-
-  // while current is not null
-
-    // assign nextNode to current.next
-
-    // assign current.next to prev
-
-    // assign prev to current
-
-    // assign current to nextNode
-
-  // return prev 
-  
+  let prev = null;
+  // initialize a variable current to the head
+  let current = head;
+  // while the current length is greater than 0
+  while (current.length > 0) {
+    // assign a const val to popping the last item from current
+    const val = current.pop();
+    // assign a const newNode to an object, passing in val, and next assigned to prev
+    const newNode = { val, next: prev }
+    // assign variable prev to newNode 
+    prev = newNode;
+  }
+  // return prev
+  return prev;
 }
 
 /* // TESTS:
