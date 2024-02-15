@@ -62,8 +62,11 @@ TimeMap.prototype.get = function(key, timestamp) {
 */
 
 /* // TESTS:
-
-
-
-
+const timeMap = new TimeMap();
+timeMap.set("foo", "bar", 1);
+console.log(timeMap.get("foo", 1)); // Output: "bar"
+console.log(timeMap.get("foo", 3)); // Output: "bar"
+timeMap.set("foo", "bar2", 4);
+console.log(timeMap.get("foo", 4)); // Output: "bar2"
+console.log(timeMap.get("foo", 5)); // Output: "bar2"
 */
