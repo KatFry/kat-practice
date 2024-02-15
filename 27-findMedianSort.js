@@ -40,7 +40,7 @@ const findMedianSort = (nums1, nums2) => {
   }
   // else if the length is odd, return merged at Math.floor of length div by 2
   else return merged[Math.floor(length / 2)]; 
-}
+};
 
 /* // TESTS:
 console.log(findMedianSort([1,3], [2])); // -> 2.00000 
@@ -52,12 +52,50 @@ console.log(findMedianSort([1,2], [3,4])); // -> 2.50000
 */
 
 const findMedianSort2 = (nums1, nums2) => {
-  
-}
+  // Ensure nums1 is the smaller array
+  if (nums1.length > nums2.length) {
+    [nums1, nums2] = [nums2, nums1];
+  }
 
+  // find totalLength property by adding lengths of nums1 and nums2
+  const totalLength = nums1.length + nums2.length;
+  // find the halfLength by dividing by 2
+  const halfLength = Math.floor((totalLength + 1) / 2);
 
+  // initialize pointers: left to 0, right to nums1 length 
+  let left = 0;
+  let right = nums1.length;
 
+  // loop while left is less than or equal to right 
+  while (left <= right) {
+    const partition1 = Math.floor((left + right) / 2);
+    const partition2 = halfLength - partition1;
 
+    const maxLeft1 = partition1 > 0 ? nums1[partition1 - 1] : Number.MIN_SAFE_INTEGER;
+    const minRight1 = partition1 < nums1.length ? nums1[partition1] : Number.MAX_SAFE_INTEGER;
+
+    const maxLeft2 = partition2 > 0 ? nums2[partition2 - 1] : Number.MIN_SAFE_INTEGER;
+    const minRight2 = partition2 < nums2.length ? nums2[partition2] : Number.MAX_SAFE_INTEGER;
+
+    if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {
+      // Found the correct partition, calculate the median
+      if (totalLength % 2 === 0) {
+        return (Math.max(maxLeft1, maxLeft2) + Math.min(minRight1, minRight2)) / 2;
+      } else {
+        return Math.max(maxLeft1, maxLeft2);
+      }
+    } else if (maxLeft1 > minRight2) {
+      // Adjust the partition in nums1
+      right = partition1 - 1;
+    } else {
+      // Adjust the partition in nums1
+      left = partition1 + 1;
+    }
+  }
+
+  // If we reach here, the input arrays are not sorted, or there's some other issue.
+  throw new Error('Input arrays are not sorted!');
+};
 
 /* // TESTS:
 console.log(findMedianSort2([1,3], [2])); // -> 2.00000 
