@@ -27,16 +27,29 @@ timeMap.get("foo", 4);         // return "bar2"
 timeMap.get("foo", 5);         // return "bar2"
 */
 
+// initialize the object to store key-value pairs
 function TimeMap() {
 
 };
 
+// stores the key with the value at the given timestamp 
 TimeMap.prototype.set = function(key, value, timestamp) {
+  // if the key doesn't exist, create an entry with an array
+
+  // push an object with the timestamp and value to the array
 
 };
 
+// returns a value - if multiple values, return value associated with largetst timestamp, if none, return ""
 TimeMap.prototype.get = function(key, timestamp) {
+  // check if the key exists in the data object
 
+  // iterate through the array of timestamps in reverse order
+
+    // if the timestamp is less than or equal to the given timestamp, return the corresponding value
+
+  // if no matching timestamp is found, return an empty string 
+  
 };
 
 
