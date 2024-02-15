@@ -22,25 +22,33 @@ Output: []
 
 
 const reverseList = head => {
+  // if the head is null or if the linked list only has a head, return it
+  if (!head || !head.next) return head;
   // initialize a variable prev to null
   let prev = null;
   // initialize a variable current to the head
   let current = head;
-  // while the current length is greater than 0
-  while (current.length > 0) {
-    // assign a const val to popping the last item from current
-    const val = current.pop();
-    // assign a const newNode to an object, passing in val, and next assigned to prev
-    const newNode = { val, next: prev }
-    // assign variable prev to newNode 
-    prev = newNode;
+  // initialize a variable next
+  let next;
+  // while the current exists
+  while (current) {
+    // assign next to the next node in the list (current.next)
+    next = current.next;
+    // move current.next to point to previous node
+    current.next = prev;
+    // reassign previous to current node 
+    prev = current;
+    // traverse to next node in linked list (current to next)
+    current = next;
   }
-  // return prev
-  return prev;
+
+  // set head to previous
+  head = prev;
+  // return the new head
+  return head;
 }
 
 /* // TESTS:
 console.log(reverseList([1,2,3,4,5])); // -> [5,4,3,2,1]
 console.log(reverseList([1,2])); // -> [2,1]
-console.log(reverseList([])); // -> []
-*/
+console.log(reverseList([])); // -> [] */
