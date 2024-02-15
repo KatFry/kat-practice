@@ -23,8 +23,28 @@ Input: nums = [1], target = 0
 Output: -1
 */
 
+// input: nums (array of integers), target (number)
+// output: number (index of target)
 const searchArray = (nums, target) => {
+  // initialize a left pointer to the start of the array 
+  let left = 0;
+  // initialize a right pointer to the end of the array 
+  let right = nums.length - 1;
+  // while left is less than or equal to right (pointers meet or cross) 
+  while (left <= right) {
+    // find the middle - Math.floor of left plus right divided by 2 
+    const mid = Math.floor((left + right) / 2);
+    // if the nums at the middle equals the target, return the index of the middle (mid)
+    if (nums[mid] === target) return mid;
+    // else if nums[mid] is greater than nums[right], reassign left to mid plus 1 (target is in right half)
+    else if (nums[mid] > nums[right]) left = mid + 1;
+    // else assign right to mid 
+    
+    // return left
 
+  }
+  // return -1 outside the loop if target is not found 
+  
 }
 
 
