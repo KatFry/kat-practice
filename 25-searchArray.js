@@ -23,6 +23,11 @@ Input: nums = [1], target = 0
 Output: -1
 */
 
+/* time and space complexity:
+- time: O (log n) - n is length of input array 'nums' (reduce search space by half for each iteration)
+- space: O(1) - constant amount of extra space regardless of input size 
+*/
+
 // input: nums (array of integers), target (number)
 // output: number (index of target)
 const searchArray = (nums, target) => {
