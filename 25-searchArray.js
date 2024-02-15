@@ -39,12 +39,12 @@ const searchArray = (nums, target) => {
     // else if nums[mid] is greater than nums[right], reassign left to mid plus 1 (target is in right half)
     else if (nums[mid] > nums[right]) left = mid + 1;
     // else assign right to mid 
-    
+    else right = mid;
     // return left
-
+    return left;
   }
   // return -1 outside the loop if target is not found 
-  
+  return -1;
 }
 
 
