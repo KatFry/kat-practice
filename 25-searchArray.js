@@ -40,16 +40,13 @@ const searchArray = (nums, target) => {
     else if (nums[mid] > nums[right]) left = mid + 1;
     // else assign right to mid 
     else right = mid;
-    // return left
-    return left;
   }
   // return -1 outside the loop if target is not found 
   return -1;
 }
 
 
-/* // TESTS:
+// TESTS:
 console.log(searchArray([4,5,6,7,0,1,2], 0)); // -> 4
 console.log(searchArray([4,5,6,7,0,1,2], 3)); // -> -1
 console.log(searchArray([1], 0)); // -> -1
-*/
