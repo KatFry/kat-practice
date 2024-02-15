@@ -15,8 +15,31 @@ Input: head = []
 Output: []
 */
 
-const reverseList = head => {
+// input: array - linked list in forward direction
+// output: reversed array - linked list in backward direction 
 
+// first create the ListNode constructor, passing in val and next
+
+
+const reverseList = head => {
+  // if the array length is 0, return the head (input array)
+
+  // initialize a variable prev to null
+
+  // initialize a variable current to head 
+
+  // while current is not null
+
+    // assign nextNode to current.next
+
+    // assign current.next to prev
+
+    // assign prev to current
+
+    // assign current to nextNode
+
+  // return prev 
+  
 }
 
 /* // TESTS:
