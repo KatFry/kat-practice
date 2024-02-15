@@ -15,6 +15,11 @@ Output: 2.50000
 Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 */
 
+/* OPTION 1: doesn't satisfy requirements of question 
+- time: O(m + n) - iterate through both arrays once to merge
+- space: O(m + n) also 
+*/
+
 // input: nums1 and nums2 - 2 sorted arrays
 // output: median of the 2 sorted arrays as a decimal 
 const findMedianSort = (nums1, nums2) => {
