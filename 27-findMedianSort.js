@@ -46,3 +46,20 @@ const findMedianSort = (nums1, nums2) => {
 console.log(findMedianSort([1,3], [2])); // -> 2.00000 
 console.log(findMedianSort([1,2], [3,4])); // -> 2.50000 
 */
+
+/* OPTION 2: binary search solution
+- time: O log (m + n)
+*/
+
+const findMedianSort2 = (nums1, nums2) => {
+  
+}
+
+
+
+
+
+/* // TESTS:
+console.log(findMedianSort2([1,3], [2])); // -> 2.00000 
+console.log(findMedianSort2([1,2], [3,4])); // -> 2.50000 
+*/
