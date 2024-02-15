@@ -38,8 +38,8 @@ const searchArray = (nums, target) => {
     if (nums[mid] === target) return mid;
     // else if nums[mid] is greater than nums[right], reassign left to mid plus 1 (target is in right half)
     else if (nums[mid] > nums[right]) left = mid + 1;
-    // else assign right to mid 
-    else right = mid;
+    // else assign right to mid minus 1 (had to do this to avoid an infinite loop)
+    else right = mid - 1;
   }
   // return -1 outside the loop if target is not found 
   return -1;
@@ -49,5 +49,4 @@ const searchArray = (nums, target) => {
 /* // TESTS:
 console.log(searchArray([4,5,6,7,0,1,2], 0)); // -> 4
 console.log(searchArray([4,5,6,7,0,1,2], 3)); // -> -1
-console.log(searchArray([1], 0)); // -> -1
- */
+console.log(searchArray([1], 0)); // -> -1  */
