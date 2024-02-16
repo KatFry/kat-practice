@@ -17,6 +17,11 @@ Input: list1 = [], list2 = [0]
 Output: [0]
 */
 
+/* time and space complexity:
+- time: O(m + n) - m and n are lengths of input linked lists 
+- space: O(1) - function uses constant amount of extra space, regardless of input sizes
+*/
+
 // input: 2 sorted linked lists (arrays)
 // output: merged list as an array 
 
