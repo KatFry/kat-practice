@@ -16,7 +16,34 @@ Input: head = [1,2,3,4,5]
 Output: [1,5,2,4,3]
 */
 
+// make ListNode constructor function, passing in val and next 
+class ListNode {
+  constructor (val, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
 const reorderList = head => {
+  // first implement a helper function reverseList to reverse a linked list, passing in node
+
+    // assign prev to null
+
+    // assign current to node
+    
+    // assign next to null 
+
+    // while current exists...
+    
+      // assign next to current.next
+
+      // assign current.next to prev
+
+      // assign prev to current
+
+      // assign current to next 
+
+    // return prev 
 
 };
 
