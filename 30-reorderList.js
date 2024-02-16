@@ -26,53 +26,61 @@ class ListNode {
 
 const reorderList = head => {
   // first implement a helper function reverseList to reverse a linked list, passing in node
-
+  const reverseList = node => {
     // assign prev to null
-
+    let prev = null;
     // assign current to node
-    
+    let current = node;
     // assign next to null 
-
+    let next = null;
     // while current exists...
-    
+    while (current) {
       // assign next to current.next
-
+      next = current.next;
       // assign current.next to prev
-
+      current.next = prev;
       // assign prev to current
-
+      prev = current;
       // assign current to next 
-
+      current = next; 
+    }
     // return prev 
+    return prev;
+  };
 
   // next: helper function to merge two linked lists
-
+  const mergeLists = (list1, list2) => {
     // while list2 exists...
-
+    while (list2) {
       // assign next1 to list1.next, next2 to list2.next
-
+      let next1 = list1.next;
+      let next2 = list2.next;
       // assign list1.next to list2
-
+      list1.next = list2;
       // assign list2.next to next1 
-
+      list2.next = next1;
       // assign list1 to next1
-
+      list1 = next1;
       // assign list2 to next2
-
+      list2 = next2;
+    }
+  };
+  
   // assign a variable slow to head (use technique of slow and fast pointers to find middle of list)
-
+  let slow = head;
   // assign a variable fast to head 
-
+  let fast = head;
   // while fast and fast.next exist...
-
+  while (fast && fast.next) { 
     // assign slow to slow.next
-
+    slow = slow.next;
     // assign fast to fast.next.next 
-
+    fast = fast.next.next;
+  }
   // reverse second half of linked list by assigning reversedSecondHalf to reverseList, passing in slow
-
+  let reversedSecondHalf = reverseList(slow);
   // merge first half and reversed second half by passing head and reversedSecondHalf to mergeLists 
-
+  mergeLists(head, reversedSecondHalf); 
 };
 
 
