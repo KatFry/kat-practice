@@ -33,8 +33,6 @@ const mergeTwoLists = (list1, list2) => {
   const dummy = new ListNode();
   // assign a variable current to dummy (point to current node in merged list)
   let current = dummy;
-  // assign a variable tail to dummy (point to tail of merged list) 
-  let tail = dummy;
   // simplify code by assigning variable p1 to list1, p2 to list2
   let p1 = list1;
   let p2 = list2;
@@ -61,18 +59,37 @@ const mergeTwoLists = (list1, list2) => {
   if (p1) current.next = p1;
   // else if only p2 is left, assign current.next to p2 
   else current.next = p2; 
-  // find the tail of the merged list by looping while current.next exists
-  while (current.next) {
-    // assign current to current.next 
+  // return dummy.next to return head of merged list
+  return dummy.next;
+}
+
+// Helper function to convert linked list to array
+const linkedListToArray = (head) => {
+  let result = [];
+  let current = head;
+
+  while (current) {
+    result.push(current.val);
     current = current.next;
   }
-  // return the head and tail of merged list (head is dummy.next, tail is current) 
-  return { head: dummy.next, tail: current };
-}
+
+  return result;
+};
+
 
 
 /* // TESTS:
-console.log(mergeTwoLists([1,2,4], [1,3,4])); // -> [1,1,2,3,4,4] 
-console.log(mergeTwoLists([],[])); // -> [] 
-console.log(mergeTwoLists([],[0])); // -> [0]
-*/
+const test1List1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+const test1List2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+const test1 = mergeTwoLists(test1List1, test1List2);
+console.log(linkedListToArray(test1)); // -> [1, 1, 2, 3, 4, 4]
+
+const test2List1 = new ListNode();
+const test2List2 = new ListNode();
+const test2 = mergeTwoLists(test2List1, test2List2);
+console.log(linkedListToArray(test2)); // -> []
+
+const test3List1 = new ListNode();
+const test3List2 = new ListNode(0);
+const test3 = mergeTwoLists(test3List1, test3List2);
+console.log(linkedListToArray(test3)); // -> [0] */
