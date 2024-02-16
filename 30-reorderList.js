@@ -16,6 +16,11 @@ Input: head = [1,2,3,4,5]
 Output: [1,5,2,4,3]
 */
 
+/* time and space complexity:
+- time: O(n) - n is number of nodes in linked list, because iterates twice 
+- space: O(1) - constant amount of extra space regardless of input size
+*/
+
 // make ListNode constructor function, passing in val and next 
 class ListNode {
   constructor (val, next = null) {
