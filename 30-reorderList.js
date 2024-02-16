@@ -85,6 +85,6 @@ const reorderList = head => {
 
 
 /* // TESTS:
-console.log(reorderList([1,2,3,4])); // -> [1,4,2,3]
-console.log(reorderList([1,2,3,4,5])); // -> [1,5,2,4,3]
-*/
+const list1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+reorderList(list1);
+console.log(list1); // Output: [1, 4, 2, 3] */
