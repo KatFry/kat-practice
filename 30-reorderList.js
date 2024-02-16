@@ -45,6 +45,34 @@ const reorderList = head => {
 
     // return prev 
 
+  // next: helper function to merge two linked lists
+
+    // while list2 exists...
+
+      // assign next1 to list1.next, next2 to list2.next
+
+      // assign list1.next to list2
+
+      // assign list2.next to next1 
+
+      // assign list1 to next1
+
+      // assign list2 to next2
+
+  // assign a variable slow to head (use technique of slow and fast pointers to find middle of list)
+
+  // assign a variable fast to head 
+
+  // while fast and fast.next exist...
+
+    // assign slow to slow.next
+
+    // assign fast to fast.next.next 
+
+  // reverse second half of linked list by assigning reversedSecondHalf to reverseList, passing in slow
+
+  // merge first half and reversed second half by passing head and reversedSecondHalf to mergeLists 
+
 };
 
 
