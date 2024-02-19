@@ -15,6 +15,11 @@ Input: head = [1,2], n = 1
 Output: [1]
 */
 
+/* time and space complexity:
+- time: O(n) - n is number of nodes in linked list (single pass through list)
+- space: O(1) - constant amount of extra space regardless of input 
+*/
+
 // make ListNode constructor function, passing in val and next 
 class ListNode {
   constructor (val, next = null) {
