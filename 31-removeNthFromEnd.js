@@ -46,9 +46,9 @@ const removeNthFromEnd = (head, n) => {
     second = second.next;
   }
   // remove nth node from end by updating next pointer of preceding node 
-  // do this by assigning first.next to first.next.next
+  // do this by assigning first.next to first.next.next (skip 4 for first test case)
   first.next = first.next.next;
-  // return dummy.next (the modified head)
+  // return dummy.next (the modified head) (now it points to [1,2,3,5] instead!)
   return dummy.next;
 };
 
