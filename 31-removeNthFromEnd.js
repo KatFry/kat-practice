@@ -54,7 +54,11 @@ const removeNthFromEnd = (head, n) => {
 
 
 /* // TESTS:
-console.log(removeNthFromEnd([1,2,3,4,5], 2)); // -> [1,2,3,5]
-console.log(removeNthFromEnd([1], 1)); // -> []
-console.log(removeNthFromEnd([1,2], 1)); // -> [1]
-*/
+const head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+console.log(removeNthFromEnd(head1, 2)); // Output: [1,2,3,5]
+
+const head2 = new ListNode(1);
+console.log(removeNthFromEnd(head2, 1)); // Output: []
+
+const head3 = new ListNode(1, new ListNode(2));
+console.log(removeNthFromEnd(head3, 1)); // Output: [1] */
