@@ -33,6 +33,20 @@ After the loop, if there's a remaining carry, add it as a new node.
 Return the result linked list.
 */
 
+
+/* Time and space complexity:
+Time Complexity:
+The time complexity is O(max(N, M)), where N and M are the lengths of the input linked lists l1 and l2. 
+This is because the function iterates through both linked lists once, 
+and the number of iterations is determined by the longer of the two lists.
+
+Space Complexity:
+The space complexity is O(max(N, M)), which is determined by the length of the result linked list. 
+The function creates a new ListNode for each digit in the sum, and in the worst case, 
+the length of the result linked list is max(N, M) + 1. 
+The "+1" is for the carry that may result in an additional digit.
+*/
+
 // make ListNode constructor function, passing in val and next 
 class ListNode {
   constructor (val, next = null) {
