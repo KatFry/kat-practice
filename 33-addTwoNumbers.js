@@ -21,6 +21,20 @@ Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 */
 
+/* STRATEGY:
+Initialize a dummy node to simplify the code.
+Set up pointers for both linked lists (l1 and l2) and a carry variable.
+Traverse both linked lists, adding the corresponding digits and the carry.
+Update the carry for the next iteration.
+Create a new node with the sum of digits (considering carry) 
+and update the result linked list.
+Move to the next nodes in l1 and l2 if they exist.
+After the loop, if there's a remaining carry, add it as a new node.
+Return the result linked list.
+*/
+
+// input: 2 arrays (linked lists)
+// output: 1 array of each digit of added numbers 
 const addTwoNumbers = (l1, l2) => {
 
 };
