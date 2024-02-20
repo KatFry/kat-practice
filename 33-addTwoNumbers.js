@@ -41,6 +41,34 @@ class ListNode {
   }
 };
 
+// Helper function to convert the array to a linked list
+const arrayToLinkedList = (arr) => {
+  if (!arr || arr.length === 0) {
+    return null;
+  }
+
+  const head = new ListNode(arr[0]);
+  let current = head;
+
+  for (let i = 1; i < arr.length; i++) {
+    current.next = new ListNode(arr[i]);
+    current = current.next;
+  }
+
+  return head;
+};
+
+// Helper function to convert the linked list to an array for easier testing
+const linkedListToArray = (head) => {
+  const result = [];
+  let current = head;
+  while (current) {
+    result.push(current.val);  // Use push to add elements to the end of the array
+    current = current.next;
+  }
+  return result;
+};
+
 // input: 2 arrays (linked lists)
 // output: 1 array of each digit of added numbers 
 const addTwoNumbers = (l1, l2) => {
@@ -63,7 +91,7 @@ const addTwoNumbers = (l1, l2) => {
     const sum = x + y + carry;
     // update carry for next iteration (because if there are extra digits, carry them over)
     // reassign carry to Math.floor of the sum divided by 10 
-    carry = Math.floor(sum % 10);
+    carry = Math.floor(sum / 10);
     // assign current.next to a new ListNode, passing in sum % 10 
     // updates next pointer of current node in result linked list to point to newly created node, 
     // effectively adding it to the result
@@ -80,25 +108,14 @@ const addTwoNumbers = (l1, l2) => {
   return dummy.next;
 };
 
-// Helper function to convert the linked list to an array for easier testing
-const linkedListToArray = (head) => {
-  const result = [];
-  let current = head;
-  while (current) {
-    result.push(current.val);
-    current = current.next;
-  }
-  return result;
-};
-
 
 /* // TESTS:
-const test1 = linkedListToArray(addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4)))));
+const test1 = linkedListToArray(addTwoNumbers(arrayToLinkedList([2, 4, 3]), arrayToLinkedList([5, 6, 4])));
 console.log(test1); // -> [7, 0, 8]
 
-const test2 = linkedListToArray(addTwoNumbers(new ListNode(0), new ListNode(0)));
+const test2 = linkedListToArray(addTwoNumbers(arrayToLinkedList([0]), arrayToLinkedList([0])));
 console.log(test2); // -> [0]
 
-const test3 = linkedListToArray(addTwoNumbers(new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))), new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))));
+const test3 = linkedListToArray(addTwoNumbers(arrayToLinkedList([9, 9, 9, 9, 9, 9, 9]), arrayToLinkedList([9, 9, 9, 9])));
 console.log(test3); // -> [8, 9, 9, 9, 0, 0, 0, 1]
 */
