@@ -80,8 +80,24 @@ const addTwoNumbers = (l1, l2) => {
   return dummy.next;
 };
 
-/* // TESTS:
-console.log(addTwoNumbers([2,4,3], [5,6,4])); // -> [7,0,8]
-console.log(addTwoNumbers([0], [0])); // -> [0] 
-console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); // -> [8,9,9,9,0,0,0,1]
-*/
+// Helper function to convert the linked list to an array for easier testing
+const linkedListToArray = (head) => {
+  const result = [];
+  let current = head;
+  while (current) {
+    result.push(current.val);
+    current = current.next;
+  }
+  return result;
+};
+
+
+// TESTS:
+const test1 = linkedListToArray(addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4)))));
+console.log(test1); // -> [7, 0, 8]
+
+const test2 = linkedListToArray(addTwoNumbers(new ListNode(0), new ListNode(0)));
+console.log(test2); // -> [0]
+
+const test3 = linkedListToArray(addTwoNumbers(new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))), new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))));
+console.log(test3); // -> [8, 9, 9, 9, 0, 0, 0, 1]
