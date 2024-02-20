@@ -92,7 +92,7 @@ const linkedListToArray = (head) => {
 };
 
 
-// TESTS:
+/* // TESTS:
 const test1 = linkedListToArray(addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4)))));
 console.log(test1); // -> [7, 0, 8]
 
@@ -101,3 +101,4 @@ console.log(test2); // -> [0]
 
 const test3 = linkedListToArray(addTwoNumbers(new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))), new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))));
 console.log(test3); // -> [8, 9, 9, 9, 0, 0, 0, 1]
+*/
