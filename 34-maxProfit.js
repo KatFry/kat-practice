@@ -21,9 +21,8 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 input: array of integers (prices of given stocks)
 output: number (maximum profit you can achieve on this transaction)
 */
-
 const maxProfit = prices => {
-
+  // 
 };
 
 /* // TESTS:
