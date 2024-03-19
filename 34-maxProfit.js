@@ -28,19 +28,20 @@ output: number (maximum profit you can achieve on this transaction)
 */
 const maxProfit = prices => {
   // initialize a variable minPrice to the first price in the array 
-
-  // initialize a variable maxPrice to 0 to be updated later
-
+  let minPrice = prices[0];
+  // initialize a variable maxProfit to 0 to be updated later
+  let maxProfit = 0;
   // iterate through the prices array starting at the second day (index 1 instead of 0)
-
+  for (let i = 1; i < prices.length; i++) {
     // declare a const potentialProf assigned to the prices array at i minus the minPrice
-
+    const potentialProf = prices[i] - minPrice;
     // update maxProfit: reassign it to the Math.max of maxProfit and potentialProf
-
+    maxProfit = Math.max(maxProfit, potentialProf);
     // update minPrice: reassign it to Math.min of minPrice and prices at i 
-
+    minPrice = Math.min(minPrice, prices[i]);
+  }
   // return maxProfit 
-  
+  return maxProfit;
 };
 
 /* // TESTS:
