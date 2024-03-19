@@ -26,8 +26,37 @@ sliding window approach: initialize left and right pointers and keep track of th
 far. Slide the window and update the set of characters seen so far 
 */
 
+// input: string
+// output: number 
 const longestSubstring = s => {
+  // declare a pointer left intialized to 0 
 
+  // declare a pointer right initialized to 0 
+
+  // initialize a variable maxLen to 0 to keep track of max length of substring 
+  
+  // assign a const seen to an empty object 
+
+  // iterate through the string using the right pointer (while right is less than s length)
+
+    // assign a const char to string at right index for readability 
+
+    // while the char is already in the set, move the left pointer...
+
+      // delete seen at s at left 
+
+      // increment left 
+
+    // reassign maxLen to Math.max of maxLen and right minus left plus 1 
+    // "right - left + 1": right - left accounts for num of chars btwn left and right, inclusive 
+    // plus 1 counts for the length of the substring 
+
+    // reassign seen at that char to true
+
+    // increment right 
+
+  // return maxLen 
+  
 };
 
 /* // TESTS:
