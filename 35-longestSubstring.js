@@ -62,7 +62,7 @@ const longestSubstring = s => {
 };
 
 /* // TESTS:
-console.log(longestSubstring("abcabcbb")); // -> "abc"
-console.log(longestSubstring("bbbbb")); // -> "b"
-console.log(longestSubstring("pwwkew")); // -> "wke" 
-*/
+console.log(longestSubstring("abcabcbb")); // -> 3
+console.log(longestSubstring("bbbbb")); // -> 1
+console.log(longestSubstring("pwwkew")); // -> 3
+ */
