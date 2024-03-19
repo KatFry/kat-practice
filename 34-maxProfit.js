@@ -22,6 +22,11 @@ Iterate through the array of prices while keeping track of the minimum price so 
 the maximum profit achievable. 
 */
 
+/* TIME AND SPACE COMPLEXITY:
+time: O(n) - n is number of elements in prices array 
+space: O(1) - constant amount of extra space for variables 
+*/
+
 /* 
 input: array of integers (prices of given stocks)
 output: number (maximum profit you can achieve on this transaction)
