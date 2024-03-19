@@ -21,6 +21,11 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
+/* OVERALL STRATEGY:
+sliding window approach: initialize left and right pointers and keep track of the characters seen so
+far. Slide the window and update the set of characters seen so far 
+*/
+
 const longestSubstring = s => {
 
 };
