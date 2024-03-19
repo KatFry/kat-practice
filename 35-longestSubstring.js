@@ -26,6 +26,11 @@ sliding window approach: initialize left and right pointers and keep track of th
 far. Slide the window and update the set of characters seen so far 
 */
 
+/* TIME AND SPACE COMPLEXITY:
+time: O(n) - n is length of input string s
+space: O(min(m,n)) - m is size of character set, n is length of input string s 
+*/
+
 // input: string
 // output: number 
 const longestSubstring = s => {
