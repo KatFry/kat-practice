@@ -34,40 +34,32 @@ space: O(min(m,n)) - m is size of character set, n is length of input string s
 // input: string
 // output: number 
 const longestSubstring = s => {
-  // declare a pointer left intialized to 0 
   let left = 0;
-  // declare a pointer right initialized to 0 
-  let right = 0; 
-  // initialize a variable maxLen to 0 to keep track of max length of substring 
+  let right = 0;
   let maxLen = 0;
-  // assign a const seen to an empty object 
   const seen = {};
-  // iterate through the string using the right pointer (while right is less than s length)
+
   while (right < s.length) {
-    // assign a const char to string at right index for readability 
     const char = s[right];
-    // while the char is already in the set, move the left pointer...
-    while (seen[char]) {
-      // delete seen at s at left 
-      delete seen[s[left]];
-      // increment left  
+    if (seen[char]) {
+      // Move the left pointer to the right of the last occurrence of the character
+      // This effectively removes all characters from the current substring that repeat
+      while (s[left] !== char) {
+        delete seen[s[left]];
+        left++;
+      }
       left++;
+    } else {
+      // Update maxLen only if the current substring is longer
+      maxLen = Math.max(maxLen, right - left + 1);
     }
-    // reassign maxLen to Math.max of maxLen and right minus left plus 1 
-    // "right - left + 1": right - left accounts for num of chars btwn left and right, inclusive 
-    // plus 1 counts for the length of the substring 
-    maxLen = Math.max(maxLen, right - left + 1);
-    // reassign seen at that char to true
     seen[char] = true;
-    // increment right 
     right++;
   }
-  // return maxLen 
   return maxLen;
 };
 
-/* // TESTS:
+// TESTS:
 console.log(longestSubstring("abcabcbb")); // -> 3
 console.log(longestSubstring("bbbbb")); // -> 1
 console.log(longestSubstring("pwwkew")); // -> 3
- */
