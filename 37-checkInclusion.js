@@ -12,6 +12,11 @@ Input: s1 = "ab", s2 = "eidboaoo"
 Output: false
 */
 
+/* TIME AND SPACE COMPLEXITY:
+time: O(n) - n is length of string s2 (iterate through each character once)
+space: O(1) - size of arrays count1 and count2 fixed at 26 regardless of input strings s1 and s2 
+*/
+
 // input: two strings
 // output: boolean 
 const checkInclusion = (s1, s2) => {
