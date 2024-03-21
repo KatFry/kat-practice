@@ -43,5 +43,4 @@ const charReplacement = (s, k) => {
 
 /* // TESTS:
 console.log(charReplacement("ABAB", 2)); // -> 4
-console.log(charReplacement("AABABBA", 1)); // -> 4
-*/
+console.log(charReplacement("AABABBA", 1)); // -> 4 */
