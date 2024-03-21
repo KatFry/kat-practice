@@ -20,10 +20,26 @@ There may exists other ways to achieve this answer too.
 // input: string, number
 // output:  number 
 const charReplacement = (s, k) => {
+  let maxLen = 0;
+  let maxCount = 0;
+  let start = 0;
+  const freqMap = new Array(26).fill(0);
 
+  for (let end = 0; end < s.length; end++) {
+    const charCode = s.charCodeAt(end) - 'A'.charCodeAt(0);
+    freqMap[charCode]++;
+
+    maxCount = Math.max(maxCount, freqMap[charCode]);
+
+    if (end - start + 1 - maxCount > k) {
+      const startCharCode = s.charCodeAt(start) - 'A'.charCodeAt(0);
+        freqMap[startCharCode]--;
+        start++;
+    }
+    maxLen = Math.max(maxLen, end - start + 1);
+  }
+  return maxLen;
 };
-
-
 
 /* // TESTS:
 console.log(charReplacement("ABAB", 2)); // -> 4
