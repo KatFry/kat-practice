@@ -17,6 +17,11 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 There may exists other ways to achieve this answer too.
 */
 
+/* TIME AND SPACE COMPLEXITY:
+time: O(n) - n is the length of the input string 's'
+space: O(1) - size of freqMap is fixed and independent of input size 
+*/
+
 // input: string, number
 // output:  number 
 const charReplacement = (s, k) => {
