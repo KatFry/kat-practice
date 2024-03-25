@@ -22,6 +22,15 @@ Explanation: Both 'a's from t must be included in the window.
 Since the largest window of s only has one 'a', return empty string.
 */
 
+/* TIME AND SPACE COMPLEXITY:
+-time: O(m + n):
+  - for loop iterates through s once, so O(m) 
+  - each iteration of while loop takes constant time, so total time is O(m) to shrink window
+  - overall dominated by for loop,  making it O(m + n)
+-space:
+  - O(n), where n is length of string t (linear with respect to length of string t)
+*/
+
 // input: 2 strings
 // output: 1 string (minimum window substring such that every char in t is included)
 const minWindow = (s, t) => {
