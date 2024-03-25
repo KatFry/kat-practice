@@ -23,6 +23,11 @@ Input: nums = [1], k = 1
 Output: [1]
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is number of elements in input array nums (iterate only once)
+- space: O(k) - k is size of sliding window (dominated by deque)
+*/
+
 // input: array (integers nums), number (sliding window k) 
 // output: array (the max sliding window)
 const maxSlidingWindow = (nums, k) => {
