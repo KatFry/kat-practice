@@ -23,6 +23,8 @@ Input: nums = [1], k = 1
 Output: [1]
 */
 
+// input: array (integers nums), number (sliding window k) 
+// output: array (the max sliding window)
 const maxSlidingWindow = (nums, k) => {
 
 };
