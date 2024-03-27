@@ -14,6 +14,11 @@ Input: root = []
 Output: []
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is the number of nodes in the binary tree (visit each node once)
+- space: O(n) - worst case, call stack holds n recursive calls 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
