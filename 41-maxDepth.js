@@ -12,7 +12,22 @@ Input: root = [1,null,2]
 Output: 2
 */
 
+class TreeNode {
+  constructor(val = 0, left = null, right = null) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+  }
+}
+
 const maxDepth = root => {
+  // if the root is undefined, return 0
+
+  // declare const leftDepth assigned to eval result of invoking maxDepth, passing in root.left
+
+  // declare const rightDepth assigned to eval result of invoking maxDepth, passing in root.right
+
+  // return the result of Math.max, passing in leftDepth and rightDepth plus 1 
 
 };
 
