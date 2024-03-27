@@ -12,6 +12,11 @@ Input: root = [1,null,2]
 Output: 2
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is number of nodes in binary tree (visit each once to calculate depth)
+- space: O(n) - recursive function calls on call stack go as deep as height of binary tree
+*/
+
 class TreeNode {
   constructor(val = 0, left = null, right = null) {
       this.val = val;
