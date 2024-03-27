@@ -45,4 +45,4 @@ console.log(maxDepth(tree1)); // Output: 3
 const tree2 = new TreeNode(1);
 tree2.right = new TreeNode(2);
 console.log(maxDepth(tree2)); // Output: 2
-*/
+ */
