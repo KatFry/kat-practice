@@ -22,7 +22,7 @@ class TreeNode {
 
 const maxDepth = root => {
   // if the root is undefined, return 0
-
+  
   // declare const leftDepth assigned to eval result of invoking maxDepth, passing in root.left
 
   // declare const rightDepth assigned to eval result of invoking maxDepth, passing in root.right
@@ -33,6 +33,16 @@ const maxDepth = root => {
 
 
 /* // TESTS:
+// Test case 1
+const tree1 = new TreeNode(3);
+tree1.left = new TreeNode(9);
+tree1.right = new TreeNode(20);
+tree1.right.left = new TreeNode(15);
+tree1.right.right = new TreeNode(7);
+console.log(maxDepth(tree1)); // Output: 3
 
-
+// Test case 2
+const tree2 = new TreeNode(1);
+tree2.right = new TreeNode(2);
+console.log(maxDepth(tree2)); // Output: 2
 */
