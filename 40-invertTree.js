@@ -14,9 +14,26 @@ Input: root = []
 Output: []
 */
 
+class TreeNode {
+  constructor(val, left = null, right = null) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+  }
+}
+
 // input: root of binary tree
 // output: inverted root of binary tree
 const invertTree = root => {
+  // if the root is null, return null 
+
+  // initialize a variable temp to the root.left
+
+  // reassign root.left to the evaluated result of calling invertTree, passing in root.right
+
+  // reassign root.right to the evaluated result of calling invertTree, passing in temp
+
+  // return root of inverted tree 
 
 };
 
