@@ -38,7 +38,15 @@ const invertTree = root => {
 };
 
 /* // TESTS:
-console.log(invertTree([4,2,7,1,3,6,9])); // -> [4,7,2,9,6,3,1]
-console.log(invertTree([2,1,3])); // -> [2,3,1]
-console.log(invertTree([])); // -> []
-*/
+const root1 = new TreeNode(4,
+  new TreeNode(2, new TreeNode(1), new TreeNode(3)),
+  new TreeNode(7, new TreeNode(6), new TreeNode(9))
+);
+const root2 = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+const root3 = null;
+
+// Invert trees and print the results
+console.log(invertTree(root1)); // Output: [4,7,2,9,6,3,1]
+console.log(invertTree(root2)); // Output: [2,3,1]
+console.log(invertTree(root3)); // Output: []
+ */
