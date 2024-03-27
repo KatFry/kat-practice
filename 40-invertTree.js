@@ -26,15 +26,15 @@ class TreeNode {
 // output: inverted root of binary tree
 const invertTree = root => {
   // if the root is null, return null 
-
+  if (!root) return null;
   // initialize a variable temp to the root.left
-
+  let temp = root.left;
   // reassign root.left to the evaluated result of calling invertTree, passing in root.right
-
+  root.left = invertTree(root.right);
   // reassign root.right to the evaluated result of calling invertTree, passing in temp
-
+  root.right = invertTree(temp);
   // return root of inverted tree 
-
+  return root;
 };
 
 /* // TESTS:
