@@ -22,8 +22,32 @@ class TreeNode {
   }
 }
 
-const isBalanced = root => {
+// define a function getHeight that takes the root and calculates height of each node in tree 
 
+  // if the root is undefined, return 0
+
+  // declare a const leftHeight assigned to the eval result of invoking getHeight, passing in root.left
+
+  // declare a const rightHeight assigned to the eval result of invoking getHeight, passing in root.right
+
+  // return Math.max of leftHeight and rightHeight plus 1 
+
+
+const isBalanced = root => {
+  // declare a function checkBalance that takes the root
+
+    // if the node is undefined, return true (must be balanced)
+
+    // declare a const leftHeight assigned to eval result of invoking getHeight, passing in node.left
+
+    // declare a const rightHeight assigned to eval result of invoking getHeight, passing in node.right
+
+    // check: if abs value of leftHeight minus rightHeight is greater than 1, return false 
+    
+    // return result of invoking checkBalance passing in node.left and again for node.right 
+
+  // return checkBalance, passing in the root 
+  
 };
 
 /* // TESTS:
