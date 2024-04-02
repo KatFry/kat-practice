@@ -24,23 +24,24 @@ class TreeNode {
 
 const diameterBinTree = root => {
   // initialize a variable diameter to 0 to be updated as you go
-
+  let diameter = 0;
   // declare a const dfs (depth first search) assigned to a function that takes a node 
-
+  const dfs = node => {
     // if the node does not exist, return 0 (length is 0)
-
+    if (!node) return 0;
     // declare a const leftDepth assigned to invoking dfs, passing in node.left
-
+    const leftDepth = dfs(node.left);
     // declare a const rightDepth assigned to invoking dfs, passing in node.right
-
+    const rightDepth = dfs(node.right);
     // reassign diameter to Math.max of current diameter and leftDepth plus rightDepth
-
+    diameter = Math.max(diameter, leftDepth + rightDepth);
     // return Math.max of leftDepth and rightDepth plus 1
-
+    return Math.max(leftDepth, rightDepth) + 1;
+  }
   // invoke dfs, passing in root 
-
+  dfs(root);
   // return the diameter
-
+  return diameter;
 };
 
 /* // TESTS:
