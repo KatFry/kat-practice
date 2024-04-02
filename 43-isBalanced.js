@@ -36,7 +36,7 @@ const getHeight = root => {
 
 const isBalanced = root => {
   // declare a function checkBalance that takes the root
-  const checkBalance = root => {
+  const checkBalance = node => {
     // if the node is undefined, return true (must be balanced)
     if (!node) return true;
     // declare a const leftHeight assigned to eval result of invoking getHeight, passing in node.left
@@ -61,4 +61,4 @@ console.log(isBalanced(root2)); // Output: false
 
 const root3 = null;
 console.log(isBalanced(root3)); // Output: true
-*/
+ */
