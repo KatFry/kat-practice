@@ -50,8 +50,8 @@ const root1 = new TreeNode(1,
     new TreeNode(2, new TreeNode(4), new TreeNode(5)),
     new TreeNode(3)
 );
-console.log(diameterOfBinaryTree(root1)); // Output: 3
+console.log(diameterBinTree(root1)); // Output: 3
 
 const root2 = new TreeNode(1, new TreeNode(2));
-console.log(diameterOfBinaryTree(root2)); // Output: 1
-*/
+console.log(diameterBinTree(root2)); // Output: 1
+ */
