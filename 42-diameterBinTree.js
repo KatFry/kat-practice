@@ -14,11 +14,43 @@ Input: root = [1,2]
 Output: 1
 */
 
+class TreeNode {
+  constructor(val, left = null, right = null) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+  }
+}
+
 const diameterBinTree = root => {
+  // initialize a variable diameter to 0 to be updated as you go
+
+  // declare a const dfs (depth first search) assigned to a function that takes a node 
+
+    // if the node does not exist, return 0 (length is 0)
+
+    // declare a const leftDepth assigned to invoking dfs, passing in node.left
+
+    // declare a const rightDepth assigned to invoking dfs, passing in node.right
+
+    // reassign diameter to Math.max of current diameter and leftDepth plus rightDepth
+
+    // return Math.max of leftDepth and rightDepth plus 1
+
+  // invoke dfs, passing in root 
+
+  // return the diameter
 
 };
 
 /* // TESTS:
-console.log(diameterBinTree([1,2,3,4,5])); // -> 3
-console.log(diameterBinTree([1,2])); // -> 1
+// Example usage:
+const root1 = new TreeNode(1,
+    new TreeNode(2, new TreeNode(4), new TreeNode(5)),
+    new TreeNode(3)
+);
+console.log(diameterOfBinaryTree(root1)); // Output: 3
+
+const root2 = new TreeNode(1, new TreeNode(2));
+console.log(diameterOfBinaryTree(root2)); // Output: 1
 */
