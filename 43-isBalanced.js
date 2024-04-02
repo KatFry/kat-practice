@@ -14,6 +14,15 @@ Input: root = []
 Output: true
 */
 
+/* TIME AND SPACE COMPLEXITY: 
+- time: O(n log n) - n is number of nodes in binary tree
+  - calculating height takes O(log n) time in best case (tree is balanced)
+  - or O(n) time in worst case (tree is completely unbalanced)
+- space: O(n) - n is number of nodes in binary tree 
+  - space used by call stack at most O(n) due to height of binary tree 
+  - no extra data structures that would scale with input size 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
