@@ -14,6 +14,11 @@ Input: root = [1,2]
 Output: 1
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is number of nodes in the binary tree (entire dfs traversal once)
+- space: O(n) - call stack can go as deep as height of tree 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
