@@ -16,6 +16,11 @@ Input: p = [1,2,1], q = [1,1,2]
 Output: false
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is total number of nodes in smaller of two trees 
+- space: O(n) - n is height of smaller of two trees (only grows up to height of tree during recursive calls)
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
@@ -47,4 +52,4 @@ console.log(isSameTree(p2, q2)); // Output: false
 const p3 = new TreeNode(1, new TreeNode(2), new TreeNode(1));
 const q3 = new TreeNode(1, new TreeNode(1), new TreeNode(2));
 console.log(isSameTree(p3, q3)); // Output: false
-*/
+ */
