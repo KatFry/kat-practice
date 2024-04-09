@@ -25,7 +25,7 @@ const isSubTree = (root, subRoot) => {
   // if the root is not defined, return false
   if (!root) return false;
   // if the eval result of invoking isSameTree passing in root and subRoot evals to true, return true
-  if (isSameTree(root, subRoot)) return false;
+  if (isSameTree(root, subRoot)) return true;
   // return isSubtree passing in root.left and subRoot OR isSubtree passing in root.right and subRoot
   return isSubTree(root.left, subRoot) || isSubTree(root.right, subRoot);
 };
@@ -33,7 +33,7 @@ const isSubTree = (root, subRoot) => {
 // define a function isSameTree that takes p and q
 const isSameTree = (p, q) => {
   // if neither p nor q is defined, return true
-  if (!p && !q) return false; 
+  if (!p && !q) return true; 
   // if p or q is not defined, or if p.val doesn't equal q.val, return false 
   if (!p || !q || p.val !== q.val) return false;
   // return isSameTree, passing in p.left and q.left, AND isSameTree,  passing in p.right and q.right
@@ -41,18 +41,17 @@ const isSameTree = (p, q) => {
 }
 
 
-/* // TESTS:
+// TESTS:
 const root1 = new TreeNode(3,
     new TreeNode(4, new TreeNode(1), new TreeNode(2)),
     new TreeNode(5)
 );
 const subRoot1 = new TreeNode(4, new TreeNode(1), new TreeNode(2));
-console.log(isSubtree(root1, subRoot1)); // Output: true
+console.log(isSubTree(root1, subRoot1)); // Output: true
 
 const root2 = new TreeNode(3,
     new TreeNode(4, new TreeNode(1), new TreeNode(2)),
     new TreeNode(5, null, new TreeNode(0))
 );
 const subRoot2 = new TreeNode(4, new TreeNode(1), new TreeNode(2));
-console.log(isSubtree(root2, subRoot2)); // Output: false
-*/
+console.log(isSubTree(root2, subRoot2)); // Output: false
