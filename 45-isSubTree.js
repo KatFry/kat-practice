@@ -23,20 +23,22 @@ class TreeNode {
 
 const isSubTree = (root, subRoot) => {
   // if the root is not defined, return false
-
+  if (!root) return false;
   // if the eval result of invoking isSameTree passing in root and subRoot evals to true, return true
-
+  if (isSameTree(root, subRoot)) return false;
   // return isSubtree passing in root.left and subRoot OR isSubtree passing in root.right and subRoot
-
+  return isSubTree(root.left, subRoot) || isSubTree(root.right, subRoot);
 };
 
 // define a function isSameTree that takes p and q
-
+const isSameTree = (p, q) => {
   // if neither p nor q is defined, return true
-
+  if (!p && !q) return false; 
   // if p or q is not defined, or if p.val doesn't equal q.val, return false 
-
+  if (!p || !q || p.val !== q.val) return false;
   // return isSameTree, passing in p.left and q.left, AND isSameTree,  passing in p.right and q.right
+  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+}
 
 
 /* // TESTS:
