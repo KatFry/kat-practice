@@ -29,17 +29,18 @@ class TreeNode {
 
 const lowestComAncestor = (root, p, q) => {
   // assign a variable currentNode to the root 
-
+  let currentNode = root;
   // while the currentNode exists...
-
+  while (currentNode) {
     // if both p and q have values smaller than the current node, LCA must be in left, so move left
-
+    if (p.val < currentNode.val && q.val < currentNode.val) currentNode = currentNode.left;
     // else if both p and q have values larger than the current node, LCA must be in right, so move right 
-
+    else if (p.val > currentNode.val && q.val > currentNode.val) currentNode = currentNode.right;
     // else one p or q has smaller value and other has larger value, you've found the LCA (return currentNode)
-
+    else return currentNode;
+  }
   // return null outside the loop 
-
+  return null; 
 };
 
 /* // TESTS:
