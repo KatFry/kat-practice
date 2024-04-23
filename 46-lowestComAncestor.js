@@ -43,7 +43,7 @@ const lowestComAncestor = (root, p, q) => {
   return null; 
 };
 
-// TESTS:
+/* // TESTS:
 const root = new TreeNode(6,
   new TreeNode(2,
     new TreeNode(0),
@@ -82,3 +82,4 @@ const q3 = new TreeNode(1);
 const lca3 = lowestComAncestor(root3, p3, q3);
 console.log(lca3.val); // output: 2
 
+*/
