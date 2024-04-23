@@ -29,7 +29,30 @@ class TreeNode {
 }
 
 const levelOrder = root => {
+  // if the root is null, return an empty array 
 
+  // declare a const result assigned to an empty array and a queue assigned to passing in root
+
+  // while the queue length is greater than 0
+
+    // assign a const levelSize to the length of the queue (num of nodes at current level)
+
+    // assign a const currentLevel to an empty array (to store vals at current level)
+
+    // traverse all nodes at current level with for loop (loop over levelSize) 
+
+      // declare a const currentNode assigned to shifting (dequeue) the first node
+
+      // push the currentNode val into the currentLevel array 
+
+      // if left child exists, enqueue it to the queue 
+
+      // if right child exists, enqueue it to the queue 
+
+    // push the currentLevel's values to the result array 
+
+  // return the result outside the loops 
+  
 };
 
 /* // TESTS:
