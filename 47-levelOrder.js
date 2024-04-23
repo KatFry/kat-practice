@@ -32,5 +32,10 @@ const root = new TreeNode(3,
   new TreeNode(9)
   new TreeNode(20, new TreeNode(15), new TreeNode(7))
 );
+console.log(levelOrder(root1)); // output: [[3], [9,20], [15,7]]
 
+const root2 = new TreeNode(1); 
+console.log(levelOrder(root2)); // output: [[1]]
+
+console.log(levelOrder(null)); // output: []
 */
