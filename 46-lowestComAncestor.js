@@ -28,10 +28,32 @@ class TreeNode {
 }
 
 const lowestComAncestor = (root, p, q) => {
+  // assign a variable currentNode to the root 
+
+  // while the currentNode exists...
+
+    // if both p and q have values smaller than the current node, LCA must be in left, so move left
+
+    // else if both p and q have values larger than the current node, LCA must be in right, so move right 
+
+    // else one p or q has smaller value and other has larger value, you've found the LCA (return currentNode)
+
+  // return null outside the loop 
 
 };
 
 /* // TESTS:
+const root = new TreeNode(6,
+  new TreeNode(2,
+    new TreeNode(0),
+    new TreeNode(4, new TreeNode(3), new TreeNode(5))
+  ),
+  new TreeNode(8, new TreeNode(7), new TreeNode(9))
+);
 
+const p1 = new TreeNode(2);
+const q1 = new TreeNode(8);
 
+const lca1 = lowestCommonAncestor(root, p1, q1);
+console.log(lca1.val); // Output: 6
 */
