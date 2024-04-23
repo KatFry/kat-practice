@@ -15,6 +15,11 @@ Input: root = []
 Output: []
 */
 
+/* STRATEGY:
+- use a queue to maintain nodes at each level 
+- iterate through each level, adding node's values to a list, then enqueue left and right children to process next
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
