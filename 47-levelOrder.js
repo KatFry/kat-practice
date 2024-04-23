@@ -41,7 +41,7 @@ const levelOrder = root => {
     // assign a const currentLevel to an empty array (to store vals at current level)
     const currentLevel = [];
     // traverse all nodes at current level with for loop (loop over levelSize) 
-    for (let i = 0; i < levelSize.length; i++) {
+    for (let i = 0; i < levelSize; i++) {
       // declare a const currentNode assigned to shifting (dequeue) the first node
       const currentNode = queue.shift();
       // push the currentNode val into the currentLevel array 
@@ -60,10 +60,10 @@ const levelOrder = root => {
 
 /* // TESTS:
 const root = new TreeNode(3, 
-  new TreeNode(9)
+  new TreeNode(9),
   new TreeNode(20, new TreeNode(15), new TreeNode(7))
 );
-console.log(levelOrder(root1)); // output: [[3], [9,20], [15,7]]
+console.log(levelOrder(root)); // output: [[3], [9,20], [15,7]]
 
 const root2 = new TreeNode(1); 
 console.log(levelOrder(root2)); // output: [[1]]
