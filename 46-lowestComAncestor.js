@@ -19,6 +19,13 @@ Input: root = [2,1], p = 2, q = 1
 Output: 2
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(h) - h is the height of the tree:
+  - in balanced bst: h is about log(n), where n is number of nodes, so time complexity is O(log(n))
+  - in unbalanced/skewed bst: h could be as large as n, making worst-case time complexity O(n) 
+- space: O(1) - algorithm uses single variable to traverse tree ('currentNode')
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
