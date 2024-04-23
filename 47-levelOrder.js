@@ -20,6 +20,11 @@ Output: []
 - iterate through each level, adding node's values to a list, then enqueue left and right children to process next
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is the total number of nodes in the binary tree (each visited once)
+- space: O(n) - where n is the max number of nodes in a level 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
