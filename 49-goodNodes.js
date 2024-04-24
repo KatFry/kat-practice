@@ -41,7 +41,25 @@ class TreeNode {
 }
 
 const goodNodes = root => {
+  // define a function dfs that takes the node and maxVal as parameters
 
+    // base case: if the node is null, return 0 
+
+    // check if current node is "good" with ternary operator 
+    // define variable isGood assigned to checking if node.val is greater than maxVal? true is 1, false is 0
+
+    // reassign maxVal to Math.max of maxVal and node.val 
+
+    // recursively check left and right children by returning...
+
+      // the variable isGood plus...
+
+      // eval result of calling dfs, passing in node.left and maxVal (left subtree) plus...
+
+      // eval result of calling dfs, passing in node.right and maxVal (right subtree) 
+
+  // return dfs, passing in root and root.val (as the start) 
+  
 };
 
 /* // TESTS:
