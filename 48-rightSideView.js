@@ -15,6 +15,11 @@ Input: root = []
 Output: []
 */
 
+/* STRATEGY:
+- use a queue for level-order traversal
+- keep track of the last node (rightmost) and add it to the result array
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
