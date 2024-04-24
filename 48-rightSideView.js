@@ -29,14 +29,15 @@ const rightSideView = root => {
 
 
 /* // TESTS:
-const root1 = new TreeNode(1
-  new TreeNode(2, new TreeNode(5)),
-  new TreeNode(3, new TreeNode(4)),
+const root1 = new TreeNode(1,
+  new TreeNode(2, null, new TreeNode(5)),
+  new TreeNode(3, null, new TreeNode(4)),
 );
-console.log(rightSideView(root1));
+console.log(rightSideView(root1)); // output: [1, 3, 4]
 
+const root2 = new TreeNode(1, null, new TreeNode(3));
+console.log(rightSideView(root2)); // output: [1, 3]
 
-
-
-
+const root3 = null;
+console.log(rightSideView(root3)); // output: []
 */
