@@ -30,25 +30,28 @@ class TreeNode {
 
 const rightSideView = root => {
   // if the tree is empty, return an empty array
-
+  if (!root) return [];
   // declare a const result assigned to an empty array to store the right-side view
-
+  const result = [];
   // declare a const queue, passing in the root for level-order traversal
-
+  const queue = [root];
   // loop until the queue is empty (length greater than 0)
-
+  while (queue.length > 0) {
     // declare a const levelSize assigned to length of the queue
-
+    const levelSize = queue.length; 
     // iterate over the levelSize
-
+    for (let i = 0; i < levelSize; i++) {
       // declare a const currentNode assigned to shifting the first item in the queue
-
+      const currentNode = queue.shift();
       // if it's the last node in the level, add it to the result (i is levelSize minus 1)
-
+      if (i === levelSize - 1) result.push(currentNode.val);
       // add left and right children to the queue if they exist 
-
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+  }
   // return the result outside of the loops 
-  
+  return result; 
 };
 
 
