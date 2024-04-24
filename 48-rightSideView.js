@@ -67,4 +67,4 @@ console.log(rightSideView(root2)); // output: [1, 3]
 
 const root3 = null;
 console.log(rightSideView(root3)); // output: []
-*/
+ */
