@@ -46,7 +46,7 @@ const goodNodes = root => {
 
 /* // TESTS:
 const root1 = new TreeNode(3, 
-  new TreeNode(1, newTreeNode(3), null),
+  new TreeNode(1, newTreeNode(3),
   new TreeNode(4, newTreeNode(1), new TreeNode(5)),
 );
 
@@ -54,7 +54,6 @@ console.log(goodNodes(root1)); // output: 4
 
 const root2 = new TreeNode(3,
   new TreeNode(3, new TreeNode(4), new TreeNode(2)),
-  null,
 );
 
 console.log(goodNodes(root2)); // output: 3
