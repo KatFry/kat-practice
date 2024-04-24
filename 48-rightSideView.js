@@ -20,6 +20,12 @@ Output: []
 - keep track of the last node (rightmost) and add it to the result array
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is total number of nodes in binary tree (traverse every node
+  to get right side view)
+- space: O(w) - w is max width of tree, typically O(n) worst case 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
