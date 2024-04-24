@@ -23,6 +23,15 @@ Output: 1
 Explanation: Root is considered as good.
 */
 
+/* STRATEGY:
+- starts a depth-first search (DFS) from the root, passing the current node and the maximum value 
+along the path (maxVal).
+- it checks whether each node's value is greater than or equal to maxVal
+- If it is, the node is considered "good."
+- maxVal is updated to be the maximum between its current value and the current node's value.
+- returns the sum of the "good" nodes plus the count of good nodes in the left and right subtrees.
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
