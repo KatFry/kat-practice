@@ -32,6 +32,11 @@ along the path (maxVal).
 - returns the sum of the "good" nodes plus the count of good nodes in the left and right subtrees.
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is total number of nodes in binary tree 
+- space: O(h) - h is height of binary tree (recursive nature of DFS, stack proportional to tree height)
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
