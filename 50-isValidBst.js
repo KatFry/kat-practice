@@ -31,7 +31,7 @@ class TreeNode {
 }
 
 // pass in along with the root a min variable initialized to null and a max variable initialized to null
-const isValidBst = root => {
+const isValidBst = (root, min = null, max = null) => {
   // base case: if the root is null, return true (it is a valid bst)
   if (!root) return true;
   // if min !== null and root val <= min OR max !== null and root val >= max, return false 
@@ -56,4 +56,4 @@ const root2 = new TreeNode(5,
   new TreeNode(4, new TreeNode(3), new TreeNode(6)),
 );
 console.log(isValidBst(root2)); // output: false
-*/
+ */
