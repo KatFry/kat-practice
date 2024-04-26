@@ -22,6 +22,11 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 - if the current node's value is not within the allowed bounds, the tree is not a valid bst 
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - where n is the number of nodes in tree 
+- space: O(h) - where h is the height of the tree (because of recursive nature of function)
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
