@@ -15,6 +15,21 @@ Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 */
 
+/* STRATEGY:
+- check that the left subtree contains only nodes with values less than the current node
+- check that the right subtree contains only nodes with values greater than the current node 
+- recursively check left and right subtrees, updating the bounds ('min' and 'max') at each step 
+- if the current node's value is not within the allowed bounds, the tree is not a valid bst 
+*/
+
+class TreeNode {
+  constructor(val, left = null, right = null) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+  }
+}
+
 const isValidBst = root => {
 
 };
