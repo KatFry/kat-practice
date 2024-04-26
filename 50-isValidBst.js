@@ -30,8 +30,18 @@ class TreeNode {
   }
 }
 
+// pass in along with the root a min variable initialized to null and a max variable initialized to null
 const isValidBst = root => {
+  // base case: if the root is null, return true (it is a valid bst)
 
+  // if min !== null and root val <= min OR max !== null and root val >= max, return false 
+
+  // recursively check left subtree by calling isValidBst and passing in root.left, min, and root.val
+
+  // recursively check right subtree by calling isValidBst and passing in root.right, root.val, and max
+
+  // return the result of checking if both left and right subtrees are valid 
+  
 };
 
 /* // TESTS:
