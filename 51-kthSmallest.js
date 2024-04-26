@@ -26,13 +26,34 @@ class TreeNode {
   }
 }
 
-const kthSmallest = root => {
+const kthSmallest = (root, k) => {
+  // initialize a count variable to 0 and a result to null 
+
+  // declare a function inOrderTraversal that takes the node as a parameter
+
+    // if node is undefined or result is null, return (either null or result is already found)
+
+    // traverse the left subtree by calling inOrderTraversal, passing in node.left
+
+    // increment count
+
+    // if count is k, 
+
+      // reassign result to node.val (store the kth smallest value)
+
+      // return (stop any further traversal once kth element is found) 
+
+    // traverse the right subtree by calling inOrderTraversal, passing in node.right 
+
+  // start in-order traversal by passing in the root initially
+
+  // return the result (the kth smallest element)
   
 };
 
 /* // TESTS:
 const root1 = new TreeNode(3,
-  new TreeNode(1, new TreeNode(2)),
+  new TreeNode(1, null, new TreeNode(2)),
   new TreeNode(4),
 );
 console.log(kthSmallest(root1, 1)); // output: 1
