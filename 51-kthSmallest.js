@@ -18,6 +18,13 @@ Output: 3
 - in-order traversal is recursively applied to left subtree, current node, and right subtree
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(h + k) - h is the height of the tree, k is position of kth smallest element 
+  - worst case: traverses through all left nodes to reach desired element
+- space: O(h) - h is the height of the tree (due to recursive stack space)
+  - worst case: tree is skewed, leading to stack depth equal to height of tree 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
