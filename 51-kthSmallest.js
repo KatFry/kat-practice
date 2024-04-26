@@ -28,27 +28,30 @@ class TreeNode {
 
 const kthSmallest = (root, k) => {
   // initialize a count variable to 0 and a result to null 
-
+  let count = 0;
+  let result = null;
   // declare a function inOrderTraversal that takes the node as a parameter
-
-    // if node is undefined or result is null, return (either null or result is already found)
-
+  const inOrderTraversal = node => {
+    // if node is undefined or result is not null, return (either null or result is already found)
+    if (!node || result !== null) return;
     // traverse the left subtree by calling inOrderTraversal, passing in node.left
-
+    inOrderTraversal(node.left);
     // increment count
-
+    count++;
     // if count is k, 
-
+    if (count === k) {
       // reassign result to node.val (store the kth smallest value)
-
+      result = node.val;
       // return (stop any further traversal once kth element is found) 
-
+      return;
+    }
     // traverse the right subtree by calling inOrderTraversal, passing in node.right 
-
+    inOrderTraversal(node.right);
+  }
   // start in-order traversal by passing in the root initially
-
+  inOrderTraversal(root);
   // return the result (the kth smallest element)
-  
+  return result;
 };
 
 /* // TESTS:
