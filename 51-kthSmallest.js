@@ -11,8 +11,23 @@ Input: root = [5,3,6,2,4,null,null,1], k = 3
 Output: 3
 */
 
-const kthSmallest = root => {
+/* STRATEGY:
+- use an in-order traversal to traverse the bst in ascending order
+- maintain a count of nodes encountered during traversal and stop when count reaches 'k'
+- if 'count' is equal to 'k', the corresponding node's value is stored in 'result'
+- in-order traversal is recursively applied to left subtree, current node, and right subtree
+*/
 
+class TreeNode {
+  constructor(val, left = null, right = null) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+  }
+}
+
+const kthSmallest = root => {
+  
 };
 
 /* // TESTS:
