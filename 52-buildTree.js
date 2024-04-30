@@ -55,35 +55,37 @@ const buildTree = (preorder, inorder) => {
 // helper function to visualize the tree in level order 
 const levelOrder = root => {
   // if the root is undefined, return an empty array 
-
+  if (!root) return [];
   // declare a const queue assigned to passing in the root 
-
+  const queue = [root];
   // declare a const result initialized to an empty array 
-
+  const result = [];
   // while there are elements in the queue...
-
+  while (queue.length) {
     // declare a const level initialized to an empty array
-
+    const level = [];
     // declare a const levelSize assigned to the queue length 
-
+    const levelSize = queue.length;
     // loop over levelSize 
-
+    for (let i = 0; i < levelSize; i++) {
       // declare a const node assigned to shifting the first element from the queue 
-
+      const node = queue.shift();
       // if the node exists...
-
+      if (node) {
         // push the node val to the level 
-
+        level.push(node.val);
         // push the node.left and node.right values to the queue 
-
-        // else 
-
+        queue.push(node.left, node.right);
+      } else {
         // push null to the level 
-
+        level.push(null);
+      }
+    }
     // push the level to the result 
-
+    result.push(level);
+  }
   // return the result
-
+  return result;
 };
 
 /* // TESTS:
