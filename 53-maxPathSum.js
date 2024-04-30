@@ -21,6 +21,9 @@ const maxPathSum = root => {
 };
 
 /* // TESTS:
+const root1 = new TreeNode(1, new TreeNode(2), new TreeNode(3));
+console.log(maxPathSum(root1)); // Output: 6
 
-
+const root2 = new TreeNode(-10, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+console.log(maxPathSum(root2)); // Output: 42
 */
