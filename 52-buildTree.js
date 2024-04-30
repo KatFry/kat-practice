@@ -14,6 +14,9 @@ Output: [-1]
 /* STRATEGY: 
 Use recursion to split the tree into left and right subtrees based on first element of preorder traversal
 and its corresponding position in the inorder traversal. 
+- first element in the 'preorder' array is the root of the tree
+- position of this root in the 'inorder' array determines the division into left and right subtrees
+- function constructs left and right subtrees, then links them to the root
 */
 
 class TreeNode {
