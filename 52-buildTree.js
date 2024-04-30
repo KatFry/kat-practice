@@ -11,6 +11,11 @@ Input: preorder = [-1], inorder = [-1]
 Output: [-1]
 */
 
+/* STRATEGY: 
+Use recursion to split the tree into left and right subtrees based on first element of preorder traversal
+and its corresponding position in the inorder traversal. 
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
@@ -20,7 +25,7 @@ class TreeNode {
 }
 
 const buildTree = (preorder, inorder) => {
-  
+
 };
 
 /* // TESTS:
