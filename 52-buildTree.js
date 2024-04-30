@@ -29,27 +29,27 @@ class TreeNode {
 
 const buildTree = (preorder, inorder) => {
   // if there are no nodes to construct (preorder or inorder are empty), then return null
-
+  if (!preorder || !inorder) return null;
   // declare a const rootValue assigned to preorder at index 0 (first element is the root)
-
+  const rootValue = preorder[0];
   // declare a const root assigned to a new TreeNode, passing in the rootValue
-
+  const root = new TreeNode(rootValue);
   // declare a const rootIndexInInorder assigned to indexOf root in the inorder array
-
+  const rootIndexInInorder = inorder.indexOf(root);
   // declare a const leftInorder assigned to slicing inorder at 0 and rootIndexInInorder (left subtree inorder)
-
+  const leftInorder = inorder.slice(0, rootIndexInInorder);
   // declare a const rightInorder assigned to slicing inorder at rootIndexInInorder plus 1 (right subtree inorder)
-
+  const rightInorder = inorder.slice(rootIndexInInorder + 1);
   // declare a const leftPreorder assigned to slicing preorder at 1 and 1 plus leftInorder length (left subtree preorder)
-
+  const leftPreorder = preorder.slice(1, 1 + leftInorder.length);
   // declare a const rightPreorder assigned to slicing preorder at 1 plus leftInorder length (right subtree preorder)
-
+  const rightPreorder = preorder.slice(1 + leftInorder.length);
   // assign root.left to invoking buildTree, passing in leftPreorder and leftInorder
-
+  root.left = buildTree(leftPreorder, leftInorder);
   // assign root.right to invoking buildTree, passing in rightPreorder and rightInorder
-
+  root.right = buildTree(rightPreorder, rightInorder);
   // return the root node
-
+  return root;
 };
 
 // helper function to visualize the tree in level order 
