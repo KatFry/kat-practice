@@ -16,6 +16,13 @@ Output: 42
 Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n), where n is the total number of nodes in the binary tree. This is because each node is 
+visited once during the recursion.
+- space: O(h), where h is the height of the binary tree. This is due to the recursive stack depth, 
+which is proportional to the height of the tree.
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
     this.val = val;
