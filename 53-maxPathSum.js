@@ -16,8 +16,36 @@ Output: 42
 Explanation: The optimal path is 15 -> 20 -> 7 with a path sum of 15 + 20 + 7 = 42.
 */
 
-const maxPathSum = root => {
+class TreeNode {
+  constructor(val, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
 
+const maxPathSum = root => {
+  let maxSum = -Infinity; // Initialize the maximum path sum to negative infinity
+
+  // Recursive helper function to calculate the maximum path sum for a given node
+  const calculateMaxSum = (node) => {
+    if (!node) {
+      return 0; // Base case: If the node is null, return 0
+    }
+
+    // Calculate the maximum path sum from the left subtree and the right subtree
+    const leftMax = Math.max(0, calculateMaxSum(node.left)); // Consider only positive sums
+    const rightMax = Math.max(0, calculateMaxSum(node.right)); // Consider only positive sums
+
+    // Update the global maximum path sum considering the current node
+    maxSum = Math.max(maxSum, node.val + leftMax + rightMax);
+
+    // Return the maximum path sum considering the current node as a "subtree root"
+    return node.val + Math.max(leftMax, rightMax);
+  };
+
+  calculateMaxSum(root); // Start the recursive calculation from the root
+  return maxSum; // Return the global maximum path sum
 };
 
 /* // TESTS:
