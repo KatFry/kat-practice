@@ -19,6 +19,12 @@ and its corresponding position in the inorder traversal.
 - function constructs left and right subtrees, then links them to the root
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n^2) - n is number of nodes, 'indexOf' takes O(n) time, 'slice' takes O(n) time 
+- space: O(n) - due to recursive call stack and additional arrays created with 'slice' 
+(could use indices instead of array slicing to make it O(h), where h is height of tree)
+*/
+
 class TreeNode {
   constructor(val, left = null, right = null) {
       this.val = val;
