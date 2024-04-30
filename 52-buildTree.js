@@ -29,6 +29,13 @@ const buildTree = (preorder, inorder) => {
 };
 
 /* // TESTS:
+const preorder1 = [3,9,20,15,7];
+const inorder1 = [9,3,15,20,7];
+const tree1 = buildTree(preorder1, inorder1);
+console.log(levelOrder(tree1)); // output: [3,9,20,null,null,15,7];
 
-
+const preorder2 = [-1];
+const inorder2 = [-1];
+const tree2 = buildTree(preorder2, inorder2);
+console.log(levelOrder(tree2)); // output: [[-1]]
 */
