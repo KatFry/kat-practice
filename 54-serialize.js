@@ -57,8 +57,12 @@ class Codec {
       }
     }
 
-    // Join the result array into a comma-separated string
-    return result.join(',');
+    // Trim trailing 'null' values to avoid unnecessary data
+    while (result.length && result[result.length - 1] === 'null') {
+      result.pop();
+    }
+
+    return result.join(','); // Return the trimmed result
   }
 
   // Deserialize a string to a binary tree
@@ -73,14 +77,14 @@ class Codec {
       const currentNode = queue.shift(); // Get the current node from the queue
 
       // Rebuild the left child
-      if (nodes[index] !== 'null') {
+      if (index < nodes.length && nodes[index] !== 'null') {
         currentNode.left = new TreeNode(parseInt(nodes[index]));
         queue.push(currentNode.left);
       }
       index++; // Move to the next node in the array
 
       // Rebuild the right child
-      if (nodes[index] !== 'null') {
+      if (index < nodes.length && nodes[index] !== 'null') {
         currentNode.right = new TreeNode(parseInt(nodes[index]));
         queue.push(currentNode.right);
       }
@@ -92,7 +96,7 @@ class Codec {
 };
 
 
-/* // TESTS:
+// TESTS:
 const codec = new Codec();
 
 // Test case 1: Serialize and deserialize a tree
@@ -109,4 +113,3 @@ console.log(codec.serialize(deserialized1)); // Should match the original output
 const serialized2 = codec.serialize(null); // Output: ""
 const deserialized2 = codec.deserialize(serialized2);
 console.log(codec.serialize(deserialized2)); // Should be an empty string
-*/
