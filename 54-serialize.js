@@ -29,6 +29,11 @@ Output: []
   - maintain a queue to track parent-child relationships 
 */
 
+/* TIME AND SPACE COMPLEXITY:
+- time: O(n) - n is the number of nodes in the binary tree, each node visited only once 
+- space: O(n) - due to the queue used during serialization and deserialization 
+*/
+
 // Define the TreeNode class
 class TreeNode {
   constructor(val, left = null, right = null) {
@@ -96,7 +101,7 @@ class Codec {
 };
 
 
-// TESTS:
+/* // TESTS:
 const codec = new Codec();
 
 // Test case 1: Serialize and deserialize a tree
@@ -113,3 +118,4 @@ console.log(codec.serialize(deserialized1)); // Should match the original output
 const serialized2 = codec.serialize(null); // Output: ""
 const deserialized2 = codec.deserialize(serialized2);
 console.log(codec.serialize(deserialized2)); // Should be an empty string
+ */
