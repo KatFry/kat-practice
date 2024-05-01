@@ -29,13 +29,68 @@ Output: []
   - maintain a queue to track parent-child relationships 
 */
 
-const serialize = root => {
+// Define the TreeNode class
+class TreeNode {
+  constructor(val, left = null, right = null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
 
+// Class to serialize and deserialize a binary tree
+class Codec {
+  // Serialize a binary tree to a string
+  serialize(root) {
+    if (!root) return ''; // Return an empty string if the root is null
+    const queue = [root]; // Use a queue for level-order traversal
+    const result = [];
+
+    while (queue.length > 0) {
+      const currentNode = queue.shift(); // Get the current node from the queue
+      if (currentNode) {
+        result.push(currentNode.val); // Add the node's value to the result
+        queue.push(currentNode.left); // Add the left child to the queue
+        queue.push(currentNode.right); // Add the right child to the queue
+      } else {
+        result.push('null'); // Add 'null' for missing nodes
+      }
+    }
+
+    // Join the result array into a comma-separated string
+    return result.join(',');
+  }
+
+  // Deserialize a string to a binary tree
+  deserialize(data) {
+    if (!data) return null; // Return null if the string is empty
+    const nodes = data.split(','); // Split the string into an array of values
+    const root = new TreeNode(parseInt(nodes[0])); // Create the root node
+    const queue = [root]; // Use a queue to rebuild the tree
+    let index = 1; // Start from the second element in the array
+
+    while (queue.length > 0) {
+      const currentNode = queue.shift(); // Get the current node from the queue
+
+      // Rebuild the left child
+      if (nodes[index] !== 'null') {
+        currentNode.left = new TreeNode(parseInt(nodes[index]));
+        queue.push(currentNode.left);
+      }
+      index++; // Move to the next node in the array
+
+      // Rebuild the right child
+      if (nodes[index] !== 'null') {
+        currentNode.right = new TreeNode(parseInt(nodes[index]));
+        queue.push(currentNode.right);
+      }
+      index++; // Move to the next node in the array
+    }
+
+    return root; // Return the rebuilt binary tree
+  }
 };
 
-const deserialize = data => {
-
-};
 
 /* // TESTS:
 
