@@ -20,6 +20,15 @@ Input: root = []
 Output: []
 */
 
+/* EXPLANATION:
+- serialization: 
+  - uses level-order traversal to convert binary tree to a comma-separated string 
+  - stores 'null' for missing nodes to maintain the structure
+- deserialization:
+  - splits the string into an array and uses level-order traversal to rebuild the tree 
+  - maintain a queue to track parent-child relationships 
+*/
+
 const serialize = root => {
 
 };
