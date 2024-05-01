@@ -93,7 +93,20 @@ class Codec {
 
 
 /* // TESTS:
+const codec = new Codec();
 
+// Test case 1: Serialize and deserialize a tree
+const root1 = new TreeNode(
+  1,
+  new TreeNode(2),
+  new TreeNode(3, new TreeNode(4), new TreeNode(5))
+);
+const serialized1 = codec.serialize(root1); // Output: "1,2,3,null,null,4,5"
+const deserialized1 = codec.deserialize(serialized1);
+console.log(codec.serialize(deserialized1)); // Should match the original output: "1,2,3,null,null,4,5"
 
-
+// Test case 2: Serialize and deserialize an empty tree
+const serialized2 = codec.serialize(null); // Output: ""
+const deserialized2 = codec.deserialize(serialized2);
+console.log(codec.serialize(deserialized2)); // Should be an empty string
 */
